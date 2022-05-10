@@ -39,32 +39,29 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+# Description
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The portal will be a tool for so-called "Bounty Hunters", which will allow them to monitor the current demand for criminals with information that will help hunters catch the criminals. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The main functionality will be an overview of these criminals, but it also includes the possibility of "reserving" the criminal and, after successful "elimination", also the possibility of "removing" from the list of wanted and simulated rewarding of user. For a better overview, hunters will have various statistics and gadgets available.
 
-### Code Splitting
+# Functionality
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Homepage
+The main page will be used to display a list of wanted criminals through the FBI database. Each criminal will be displayed as a card with a name, photo, short description, reward amount and a button that will show the user the details of the criminal on the new page. On one page will be generated 20 criminals with listing possibillity.
 
-### Analyzing the Bundle Size
+There will also be the possibility of filtering criminals, so that the hunter has the opportunity to choose his target based on the specified parameters, e.g. age, eye and hair color, height, date of birth, place, nationality, place of birth, race, reward, gender, weight. All filters will be included in the URL for the user to share, etc.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Several types of inputs, checkboxes, radio buttons, etc. can be used in the filtration form. It will also include the feature called "Reverse filtration".
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Detail page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The detail page will provide detailed information about the wanted criminal, photos etc.. It will also include the c to remove the person and then remove the person from the wanted list. Upon successful removal, the hunter will be fictitiously rewarded.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Statistics
 
-### `npm run build` fails to minify
+Based on the data of all searches, statistics will be generated for a greater overview and graphical display of this data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
