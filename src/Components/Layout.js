@@ -1,7 +1,9 @@
-import { Container } from "@mui/material"
+import { Container } from "@mui/material";
 
-export function Layout({children}) {
-    return <>
-        <Container>{children}</Container>
+export function Layout({ children }) {
+  return (
+    <>
+      <Container>{children}</Container>
     </>
+  );
 }
