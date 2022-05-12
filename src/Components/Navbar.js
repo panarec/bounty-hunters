@@ -4,7 +4,15 @@ export const Navbar = () => {
   return (
     <div className="navbar">
       <nav>
-        <Link to="/">Home</Link>
+        <Link className="nav-link" to="/">
+          HOME
+        </Link>
+        <Link className="nav-link" to="/">
+          STATISTICS
+        </Link>
+        <Link className="nav-link" to="/">
+          PRODUCTS
+        </Link>
       </nav>
     </div>
   );

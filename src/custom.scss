@@ -1,4 +1,44 @@
+:root {
+  --green-color: #80af8d;
+  --red-color: #dd6867;
+  --bg-color: #f2deb9;
+  --rye-font: 'Rye', cursive;
+  --smokum-font: 'Smokum', cursive;
+}
+
 body {
   margin: 0;
   padding: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+}
+.header {
+  background-color: var(--green-color);
+  font-family: var(--smokum-font);
+  font-size: 2.5rem;
+  padding-block: 1rem;
+  color: var(--bg-color);
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--bg-color);
+  &::after {
+    content: '/';
+    padding-left: 1rem;
+  }
+  &:hover {
+    text-shadow: 1px 1px rgb(0, 0, 0);
+    &::after {
+      text-shadow: none;
+    }
+  }
+  &:last-child::after {
+    content: '';
+  }
 }
