@@ -9,4 +9,4 @@ export const Routes = () => {
       <Route path="/:slug" element={<CriminalDetailPage />}></Route>
     </RouterRoutes>
   );
-}
+};
