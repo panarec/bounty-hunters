@@ -1,8 +1,9 @@
-import { BrowserRouter } from "react-router-dom";
-import { Layout } from "./Components/Layout";
-import { Routes } from "./Routes";
+import { BrowserRouter } from 'react-router-dom';
 
-function App() {
+import { Layout } from './Components/Layout';
+import { Routes } from './Routes';
+
+const App = () => {
   return (
     <BrowserRouter>
       <Layout>
@@ -10,6 +11,6 @@ function App() {
       </Layout>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

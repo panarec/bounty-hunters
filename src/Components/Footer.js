@@ -1,3 +1,3 @@
-export function Footer() {
+export const Footer = () => {
   return <div></div>;
-}
+};

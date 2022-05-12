@@ -1,10 +1,11 @@
-import { Route, Routes as RouterRoutes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
+import { Route, Routes as RouterRoutes } from 'react-router-dom';
 
-export function Routes() {
+import { Homepage } from './pages/Homepage';
+
+export const Routes = () => {
   return (
     <RouterRoutes>
       <Route index element={<Homepage />}></Route>
     </RouterRoutes>
   );
-}
+};

@@ -1,8 +1,8 @@
-import { Container } from "@mui/material";
-import { Footer } from "./Footer";
-import { Header } from "./Header";
+import { Container } from '@mui/material';
+import { Footer } from './Footer';
+import { Header } from './Header';
 
-export function Layout({ children }) {
+export const Layout = ({ children }) => {
   return (
     <>
       <Header />
@@ -10,4 +10,4 @@ export function Layout({ children }) {
       <Footer />
     </>
   );
-}
+};
