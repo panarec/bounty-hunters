@@ -1,3 +1,3 @@
-export function CriminalDetailPage() {
+export const CriminalDetailPage = () => {
     return <div></div>
 }

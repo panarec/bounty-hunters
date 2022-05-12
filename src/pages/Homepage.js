@@ -1,3 +1,3 @@
-export default function Homepage () {
+export const Homepage = () => {
     return <div></div>
 }
