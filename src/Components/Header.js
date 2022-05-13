@@ -1,14 +1,22 @@
 import { Container } from '@mui/material';
+import { useState } from 'react';
 import { MenuButton } from './MenuButton';
 
 import { Navbar } from './Navbar';
 
 export const Header = () => {
+  const [sidebarActive, setSidebarActive] = useState(false);
+
   return (
     <div className="header">
       <Container>
-        <MenuButton />
-        <Navbar></Navbar>
+        <MenuButton
+          sidebarActive={sidebarActive}
+          setSidebarActive={setSidebarActive}
+        />
+        <Navbar
+          sidebarActive={sidebarActive}
+        />
       </Container>
     </div>
   );

@@ -48,22 +48,34 @@ body {
     }
   }
 }
+.menu-btn[aria-label='menu'] {
+  display: none;
+}
+
 @media (max-width: 576px) {
-  .header{
+  .header {
     text-align: right;
   }
   .primary-nav {
     align-items: center;
     position: fixed;
+    transform: translateY(-100%);
     inset: 0;
     background-color: var(--green-color);
 
+    transition: all 0.3s ease-in-out;
     padding-block: min(20vh, 10rem);
     flex-direction: column;
+    &.active {
+      transform: translateY(0);
+    }
     li {
       &::after {
         content: '';
       }
     }
+  }
+  .menu-btn[aria-label='menu'] {
+    display: inline-block;
   }
 }
