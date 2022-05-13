@@ -13,32 +13,40 @@ body {
 .navbar {
   display: flex;
   justify-content: center;
-  nav {
-    display: flex;
-    gap: 1rem;
-  }
 }
 .header {
   background-color: var(--green-color);
   font-family: var(--smokum-font);
   font-size: 2.5rem;
-  padding-block: 1rem;
   color: var(--bg-color);
+  padding-block: 1rem;
 }
 .nav-link {
   text-decoration: none;
   color: var(--bg-color);
-  &::after {
-    content: '/';
-    padding-left: 1rem;
-  }
-  &:hover {
-    text-shadow: 1px 1px rgb(0, 0, 0);
+}
+.primary-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  li {
+    display: inline;
     &::after {
-      text-shadow: none;
+      content: '/';
+      padding-left: 1rem;
+    }
+    &:hover {
+      text-shadow: 1px 1px rgb(0, 0, 0);
+      &::after {
+        text-shadow: none;
+      }
+    }
+    &:last-child::after {
+      content: '';
     }
   }
-  &:last-child::after {
-    content: '';
-  }
+}
+@media (max-width: 576px) {
 }

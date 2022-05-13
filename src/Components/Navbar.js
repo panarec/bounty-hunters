@@ -4,15 +4,23 @@ export const Navbar = () => {
   return (
     <div className="navbar">
       <nav>
-        <Link className="nav-link" to="/">
-          HOME
-        </Link>
-        <Link className="nav-link" to="/">
-          STATISTICS
-        </Link>
-        <Link className="nav-link" to="/">
-          PRODUCTS
-        </Link>
+        <ul className='primary-nav'>
+          <li>
+            <Link className="nav-link" to="/">
+              HOME
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="/">
+              STATISTICS
+            </Link>
+          </li>
+          <li>
+            <Link className="nav-link" to="/">
+              PRODUCTS
+            </Link>
+          </li>
+        </ul>
       </nav>
     </div>
   );
