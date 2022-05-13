@@ -5,10 +5,9 @@ export const MenuButton = () => {
   return (
     <IconButton
       className="menu-btn"
-      size="large"
       aria-label="menu"
       color="inherit"
-      sx={{ position: 'absolute', zIndex: '9999' }}
+      sx={{ zIndex: '9999' }}
     >
       <MenuIcon fontSize="large" />
     </IconButton>

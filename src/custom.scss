@@ -49,6 +49,9 @@ body {
   }
 }
 @media (max-width: 576px) {
+  .header{
+    text-align: right;
+  }
   .primary-nav {
     align-items: center;
     position: fixed;
