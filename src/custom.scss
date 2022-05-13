@@ -49,4 +49,18 @@ body {
   }
 }
 @media (max-width: 576px) {
+  .primary-nav {
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: var(--green-color);
+
+    padding-block: min(20vh, 10rem);
+    flex-direction: column;
+    li {
+      &::after {
+        content: '';
+      }
+    }
+  }
 }
