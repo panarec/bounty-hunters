@@ -1,3 +1,4 @@
+import StarIcon from '@mui/icons-material/Star';
 import {
   Avatar,
   Button,
@@ -5,9 +6,9 @@ import {
   CardActions,
   CardContent,
   CardHeader,
-  CardMedia,
   Grid,
   Paper,
+  Stack,
   Typography,
 } from '@mui/material';
 
@@ -38,6 +39,11 @@ export const CriminalCard = () => {
           }}
         />
         <CardContent>
+          <Stack direction="row" spacing={2} justifyContent="center" alignItems="center" mb={1}>
+            <StarIcon />
+            <StarIcon fontSize='large' />
+            <StarIcon />
+          </Stack>
           <Typography component="p">
             Lorem ipsum dolor sit amet adisciplin etis dero varti.
           </Typography>
