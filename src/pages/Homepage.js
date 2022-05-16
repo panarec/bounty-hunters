@@ -1,3 +1,8 @@
+import { CardList } from "../Components/CardList";
+import { CriminalCard } from "../Components/CriminalCard";
+
 export const Homepage = () => {
-  return <div></div>;
+  return <CardList> 
+    <CriminalCard />
+  </CardList>;
 };
