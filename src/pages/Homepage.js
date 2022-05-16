@@ -1,3 +1,7 @@
+import { FiltersForm } from "../Components/FiltersForm";
+
 export const Homepage = () => {
-  return <div></div>;
+  return <FiltersForm heading="SEARCH">
+
+  </FiltersForm>
 };
