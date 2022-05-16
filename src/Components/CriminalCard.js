@@ -7,15 +7,23 @@ import {
   CardHeader,
   CardMedia,
   Grid,
+  Paper,
   Typography,
 } from '@mui/material';
 
 import placeholder from '../images/placeholder.jpg';
+import bgImage from '../images/team-background.png';
 
 export const CriminalCard = () => {
   return (
     <Grid item>
-      <Card sx={{ maxWidth: '17rem', textAlign: 'center' }}>
+      <Card
+        sx={{
+          maxWidth: '17rem',
+          textAlign: 'center',
+          backgroundImage: `url(${bgImage})`,
+        }}
+      >
         <CardHeader
           title="BILLY THE KID"
           titleTypographyProps={{ fontFamily: 'Smokum' }}
@@ -35,7 +43,12 @@ export const CriminalCard = () => {
           </Typography>
         </CardContent>
         <CardActions disableSpacing sx={{ padding: 0 }}>
-          <Button variant="contained" size="large">
+          <Button
+            variant="contained"
+            size="large"
+            fullWidth
+            sx={{ backgroundColor: '#DA6564' }}
+          >
             DETAIL
           </Button>
         </CardActions>
