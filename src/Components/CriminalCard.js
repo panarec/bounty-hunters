@@ -1,14 +1,15 @@
 import {
-  Grid,
+  Avatar,
+  Button,
   Card,
+  CardActions,
+  CardContent,
   CardHeader,
   CardMedia,
-  Avatar,
-  CardContent,
+  Grid,
   Typography,
-  CardActions,
-  Button,
 } from '@mui/material';
+
 import placeholder from '../images/placeholder.jpg';
 
 export const CriminalCard = () => {
@@ -33,10 +34,10 @@ export const CriminalCard = () => {
             Lorem ipsum dolor sit amet adisciplin etis dero varti.
           </Typography>
         </CardContent>
-        <CardActions disableSpacing sx={{padding: 0}}>
-            <Button variant="contained" size="large">
-                DETAIL
-            </Button>
+        <CardActions disableSpacing sx={{ padding: 0 }}>
+          <Button variant="contained" size="large">
+            DETAIL
+          </Button>
         </CardActions>
       </Card>
     </Grid>
