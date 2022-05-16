@@ -50,14 +50,16 @@ export const CriminalCard = ({
             variant="h4"
             component="h2"
             sx={{
-              fontFamily: 'Rye',
-              color: '#80AF8D',
-              transform: 'translate(50%, 20%) rotate(-20deg)',
               position: 'absolute',
-              bottom: '0px',
+              fontFamily: 'Rye',
+              color: rewardAmount ? '#80AF8D' : '#DD6867',
+              transform: 'translateX(-50%) rotate(-20deg)',
+              left: '50%',
+              bottom: '-10px',
+              whiteSpace: 'nowrap',
             }}
           >
-            {rewardAmount}
+            {rewardAmount ? rewardAmount : 'ELIMINATED'}
           </Typography>
         </CardMedia>
         <CardContent>
