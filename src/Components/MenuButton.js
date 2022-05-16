@@ -1,5 +1,5 @@
-import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from '@mui/material';
 
 export const MenuButton = ({ sidebarActive, setSidebarActive }) => {

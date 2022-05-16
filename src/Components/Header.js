@@ -1,7 +1,7 @@
-import { Container } from '@mui/material';
 import { useState } from 'react';
-import { MenuButton } from './MenuButton';
+import { Container } from '@mui/material';
 
+import { MenuButton } from './MenuButton';
 import { Navbar } from './Navbar';
 
 export const Header = () => {
@@ -14,9 +14,7 @@ export const Header = () => {
           sidebarActive={sidebarActive}
           setSidebarActive={setSidebarActive}
         />
-        <Navbar
-          sidebarActive={sidebarActive}
-        />
+        <Navbar sidebarActive={sidebarActive} />
       </Container>
     </div>
   );
