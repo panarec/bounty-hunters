@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
   "plugins": ["simple-import-sort", "import"],
   "rules": {
     "simple-import-sort/imports": [
@@ -27,6 +27,7 @@ module.export = {
     "simple-import-sort/exports": "error",
     "import/first": "error",
     "import/newline-after-import": "error",
-    "import/no-duplicates": "error"
+    "import/no-duplicates": "error",
+    "extends": ["@salesforce/eslint-config-lwc/recommended"]
   }
 }
