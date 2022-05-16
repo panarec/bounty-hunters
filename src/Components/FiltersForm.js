@@ -12,7 +12,9 @@ export const FiltersForm = ({ heading, children }) => {
           {heading}
         </Typography>
       </Grid>
-      {children}
+      <Grid item container spacing={2} justifyContent="center">
+        {children}
+      </Grid>
     </Grid>
   );
 };
