@@ -20,9 +20,9 @@ export const Navbar = ({ sidebarActive }) => {
     <div className="navbar">
       <nav>
         <ul className={`primary-nav ${sidebarActive && 'active'}`}>
-          {links.map((link) => {
+          {links.map((link, index) => {
             return (
-              <li>
+              <li key={index}>
                 <Link className="nav-link" to={link.route}>
                   {link.name}
                 </Link>
