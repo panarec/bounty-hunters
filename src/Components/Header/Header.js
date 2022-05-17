@@ -9,7 +9,7 @@ import './_header.scss';
 export const Header = () => {
   const [sidebarActive, setSidebarActive] = useState(false);
 
-  const handleMenuButtonClick = (event) => {
+  const onClick = (event) => {
     setSidebarActive(!sidebarActive);
   };
 
@@ -18,7 +18,7 @@ export const Header = () => {
       <Container>
         <MenuButton
           sidebarActive={sidebarActive}
-          onMenuButtonClick={handleMenuButtonClick}
+          onMenuButtonClick={onClick}
         />
         <Navbar sidebarActive={sidebarActive} />
       </Container>

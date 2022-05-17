@@ -20,15 +20,13 @@ export const Navbar = ({ sidebarActive }) => {
     <div className="navbar">
       <nav>
         <ul className={`primary-nav ${sidebarActive && 'active'}`}>
-          {links.map((link, index) => {
-            return (
-              <li key={index}>
-                <Link className="nav-link" to={link.route}>
-                  {link.name}
-                </Link>
-              </li>
-            );
-          })}
+          {links.map((link, index) => (
+            <li key={index}>
+              <Link className="nav-link" to={link.route}>
+                {link.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

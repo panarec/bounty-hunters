@@ -2,13 +2,13 @@ import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from '@mui/material';
 
-export const MenuButton = ({ sidebarActive, onMenuButtonClick }) => {
+export const MenuButton = ({ sidebarActive, onClick }) => {
   return (
     <IconButton
       aria-label="menu"
       color="inherit"
       sx={{ zIndex: '9999' }}
-      onClick={(e) => onMenuButtonClick(e)}
+      onClick={(e) => onClick(e)}
       className="menu-btn"
     >
       {sidebarActive ? (
