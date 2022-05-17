@@ -8,7 +8,7 @@ export const MenuButton = ({ sidebarActive, onClick }) => {
       aria-label="menu"
       color="inherit"
       sx={{ zIndex: '9999' }}
-      onClick={(e) => onClick(e)}
+      onClick={onClick}
       className="menu-btn"
     >
       {sidebarActive ? (
