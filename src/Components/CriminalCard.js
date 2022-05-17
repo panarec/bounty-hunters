@@ -12,7 +12,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import { bgImage, placeHolder } from './assets/images/config';
+import { bgImage, placeHolder } from './assets/images';
 import { variables } from './assets/variables';
 
 export const CriminalCard = ({

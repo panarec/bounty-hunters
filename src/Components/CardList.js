@@ -8,9 +8,9 @@ export const CardList = ({ spacing }) => {
 
   return (
     <Grid container spacing={spacing}>
-      {criminals.map((criminal, index) => {
-        return <CriminalCard key={index} />;
-      })}
+      {criminals.map((criminal, index) => (
+        <CriminalCard key={index} />
+      ))}
       <CriminalCard xl={3} />
     </Grid>
   );
