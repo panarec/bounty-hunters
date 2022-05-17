@@ -1,4 +1,7 @@
+import { CardList } from "../Components/CardList";
 
 export const Homepage = () => {
-  return <div></div>
+  return <div>
+    <CardList></CardList>
+  </div>
 };

@@ -11,6 +11,7 @@ export const CardList = ({ spacing }) => {
       {criminals.map((criminal, index) => {
         return <CriminalCard key={index} />;
       })}
+      <CriminalCard xl={3} />
     </Grid>
   );
 };

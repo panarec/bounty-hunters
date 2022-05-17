@@ -15,6 +15,8 @@ import {
 import placeholder from '../images/placeholder.jpg';
 import bgImage from '../images/team-background.png';
 
+import { variables } from './assets/variables';
+
 export const CriminalCard = ({
   title,
   avatar,
@@ -22,6 +24,8 @@ export const CriminalCard = ({
   rewardAmount,
   ...rest
 }) => {
+  const { redColor, redColorHovered, greenColor } = variables;
+
   return (
     <Grid item {...rest}>
       <Card
@@ -40,8 +44,8 @@ export const CriminalCard = ({
           <Avatar
             src={avatar ? avatar : placeholder}
             sx={{
-              width: 150,
-              height: 150,
+              width: '10rem',
+              height: '10rem',
               border: '2px solid black',
               margin: '0 auto',
             }}
@@ -52,7 +56,7 @@ export const CriminalCard = ({
             sx={{
               position: 'absolute',
               fontFamily: 'Rye',
-              color: rewardAmount ? '#80AF8D' : '#DD6867',
+              color: rewardAmount ? greenColor : redColor,
               transform: 'translateX(-50%) rotate(-20deg)',
               left: '50%',
               bottom: '-10px',
@@ -81,7 +85,17 @@ export const CriminalCard = ({
           </Typography>
         </CardContent>
         <CardActions disableSpacing sx={{ padding: 0 }}>
-          <Button variant="contained" size="large" fullWidth color="error">
+          <Button
+            variant="contained"
+            size="large"
+            fullWidth
+            sx={{
+              backgroundColor: redColor,
+              '&:hover': {
+                backgroundColor: redColorHovered,
+              },
+            }}
+          >
             DETAIL
           </Button>
         </CardActions>
