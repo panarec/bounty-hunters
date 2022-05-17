@@ -12,9 +12,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import placeholder from '../images/placeholder.jpg';
-import bgImage from '../images/team-background.png';
-
+import { bgImage, placeHolder } from './assets/images/config';
 import { variables } from './assets/variables';
 
 export const CriminalCard = ({
@@ -42,7 +40,7 @@ export const CriminalCard = ({
 
         <CardMedia sx={{ position: 'relative' }}>
           <Avatar
-            src={avatar ? avatar : placeholder}
+            src={avatar ? avatar : placeHolder}
             sx={{
               width: '10rem',
               height: '10rem',
