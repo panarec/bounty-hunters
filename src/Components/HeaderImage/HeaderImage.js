@@ -1,5 +1,10 @@
+import { saloonImg } from '../../assets/images';
+
+import './_headerImage.scss';
+
 export const HeaderImage = () => {
-    return <div>
-        <img />
+  return (
+    <div className="header-image">
     </div>
-}
+  );
+};

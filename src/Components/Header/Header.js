@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Container } from '@mui/material';
 
+import { HeaderImage } from '../HeaderImage/HeaderImage';
 import { MenuButton } from '../MenuButton';
 import { Navbar } from '../Navbar';
 
@@ -12,11 +13,14 @@ export const Header = () => {
   const onClick = (event) => setSidebarActive(!sidebarActive);
 
   return (
-    <div className="header">
-      <Container>
-        <MenuButton sidebarActive={sidebarActive} onClick={onClick} />
-        <Navbar sidebarActive={sidebarActive} />
-      </Container>
-    </div>
+    <>
+      <div className="header">
+        <Container>
+          <MenuButton sidebarActive={sidebarActive} onClick={onClick} />
+          <Navbar sidebarActive={sidebarActive} />
+        </Container>
+      </div>
+      <HeaderImage />
+    </>
   );
 };
