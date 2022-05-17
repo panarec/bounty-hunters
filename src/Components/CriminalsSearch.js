@@ -1,5 +1,3 @@
-import { Grid } from '@mui/material';
-
 import { CheckboxFilter } from './CheckboxFilter';
 import { Filter } from './Filter';
 import { SliderFilter } from './SliderFilter';
