@@ -1,6 +1,6 @@
 module.exports = {
   plugins: ['simple-import-sort', 'import'],
-  extends: "react-app",
+  extends: 'react-app',
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module',
