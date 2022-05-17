@@ -1,29 +1,19 @@
-:root {
-  --green-color: #80af8d;
-  --red-color: #dd6867;
-  --bg-color: #f2deb9;
-  --rye-font: 'Rye', cursive;
-  --smokum-font: 'Smokum', cursive;
-}
+@import '../../assets/variables';
 
-body {
-  margin: 0;
-  padding: 0;
-}
 .navbar {
   display: flex;
   justify-content: center;
 }
 .header {
-  background-color: var(--green-color);
-  font-family: var(--smokum-font);
+  background-color: $green-color;
+  font-family: $smokum-font;
   font-size: 2.5rem;
-  color: var(--bg-color);
+  color: $bg-color;
   padding-block: 1rem;
 }
 .nav-link {
   text-decoration: none;
-  color: var(--bg-color);
+  color: $bg-color;
 }
 .primary-nav {
   list-style: none;
@@ -61,7 +51,7 @@ body {
     position: fixed;
     transform: translateY(-100%);
     inset: 0;
-    background-color: var(--green-color);
+    background-color: $green-color;
 
     transition: all 0.3s ease-in-out;
     padding-block: min(20vh, 10rem);
