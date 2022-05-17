@@ -1,9 +1,16 @@
-import {  Grid } from '@mui/material';
+import { useState } from 'react';
+import { Grid } from '@mui/material';
 
-export const CardList = ({children, spacing}) => {
+import { CriminalCard } from './CriminalCard';
+
+export const CardList = ({ spacing }) => {
+  const [criminals, setCriminals] = useState([]);
+
   return (
     <Grid container spacing={spacing}>
-      {children}
+      {criminals.map((criminal, index) => {
+        return <CriminalCard key={index} />;
+      })}
     </Grid>
   );
 };

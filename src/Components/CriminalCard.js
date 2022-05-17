@@ -20,10 +20,10 @@ export const CriminalCard = ({
   avatar,
   shortDescription,
   rewardAmount,
-  ...props
+  ...rest
 }) => {
   return (
-    <Grid item {...props}>
+    <Grid item {...rest}>
       <Card
         sx={{
           maxWidth: '17rem',
