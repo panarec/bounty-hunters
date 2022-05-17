@@ -1,3 +1,3 @@
 export const CriminalDetailPage = () => {
-    return <div></div>
-}
+  return <div></div>;
+};
