@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Container } from '@mui/material';
 
-import { HeaderImage } from '../HeaderImage/HeaderImage';
 import { MenuButton } from '../MenuButton';
 import { Navbar } from '../Navbar';
+import { PageTitle } from '../PageTitle/PageTitle';
 
 import './_header.scss';
 
@@ -20,7 +20,6 @@ export const Header = () => {
           <Navbar sidebarActive={sidebarActive} />
         </Container>
       </div>
-      <HeaderImage />
     </>
   );
 };

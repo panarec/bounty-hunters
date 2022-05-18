@@ -1,6 +1,6 @@
 @import '../../assets/variables';
 
-.header-image {
+.page-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,12 +11,11 @@
   background-size: cover;
   background-position: center center;
   text-align: center;
-  h1,
-  h5 {
+  div {
     margin: 2rem 1rem;
     letter-spacing: 3px;
     line-height: 1.5;
-    color: #fff;
+    color: $white-color;
     font-family: $rye-font;
   }
 }
