@@ -2,6 +2,7 @@
 
 .header-image {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 600px;
@@ -9,7 +10,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  h1 {
+  text-align: center;
+  h1,
+  h5 {
+    margin: 2rem 1rem;
+    letter-spacing: 3px;
+    line-height: 1.5;
     color: #fff;
     font-family: $rye-font;
   }

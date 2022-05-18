@@ -1,7 +1,9 @@
-import { CardList } from "../Components/CardList";
+import { CardList } from '../Components/CardList';
 
 export const Homepage = () => {
-  return <div>
-    <CardList></CardList>
-  </div>
+  return (
+    <div>
+      <CardList></CardList>
+    </div>
+  );
 };
