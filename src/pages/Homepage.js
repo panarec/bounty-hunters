@@ -8,7 +8,7 @@ export const Homepage = () => {
     <>
       <PageTitle />
       <Container>
-        <CardList></CardList>
+        <CardList />
       </Container>
     </>
   );

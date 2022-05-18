@@ -13,13 +13,11 @@ export const Header = () => {
   const onClick = (event) => setSidebarActive(!sidebarActive);
 
   return (
-    <>
-      <div className="header">
-        <Container>
-          <MenuButton sidebarActive={sidebarActive} onClick={onClick} />
-          <Navbar sidebarActive={sidebarActive} />
-        </Container>
-      </div>
-    </>
+    <div className="header">
+      <Container>
+        <MenuButton sidebarActive={sidebarActive} onClick={onClick} />
+        <Navbar sidebarActive={sidebarActive} />
+      </Container>
+    </div>
   );
 };
