@@ -1,13 +1,17 @@
+import { variables } from './../assets/variables';
+
 const { Grid, Typography } = require('@mui/material');
 
 export const FiltersForm = ({ heading, children }) => {
+  const { redColor, whiteColor } = variables;
+
   return (
-    <Grid container sx={{ backgroundColor: '#DA6564', padding: "2rem" }}>
+    <Grid container sx={{ backgroundColor: redColor, padding: '2rem' }}>
       <Grid item container justifyContent="center">
         <Typography
           variant="h2"
           component="h4"
-          sx={{ fontFamily: 'Smokum', color: '#fff', paddingBottom: "2rem" }}
+          sx={{ fontFamily: 'Smokum', color: whiteColor , paddingBottom: '2rem' }}
         >
           {heading}
         </Typography>
