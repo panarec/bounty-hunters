@@ -12,8 +12,8 @@ import {
   Typography,
 } from '@mui/material';
 
-import { bgImage, placeHolder } from './assets/images';
-import { variables } from './assets/variables';
+import { bgImage, placeHolder } from '../assets/images';
+import { variables } from '../assets/variables';
 
 export const CriminalCard = ({
   title,

@@ -1,5 +1,3 @@
-import { Container } from '@mui/material';
-
 import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
 
@@ -9,7 +7,7 @@ export const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <Container maxWidth="xl">{children}</Container>
+      {children}
       <Footer />
     </>
   );

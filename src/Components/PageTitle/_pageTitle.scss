@@ -1,0 +1,21 @@
+@import '../../assets/variables';
+
+.page-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background-image: url(../../assets/images/saloon.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  div {
+    margin: 2rem 1rem;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    color: $white-color;
+    font-family: $rye-font;
+  }
+}
