@@ -1,5 +1,0 @@
-const Image = () => {
-    return (
-        null
-    )
-}

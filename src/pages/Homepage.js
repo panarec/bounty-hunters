@@ -1,7 +1,15 @@
-import { CardList } from "../Components/CardList";
+import { Container } from '@mui/material';
+
+import { CardList } from '../Components/CardList';
+import { PageTitle } from '../Components/PageTitle/PageTitle';
 
 export const Homepage = () => {
-  return <div>
-    <CardList></CardList>
-  </div>
+  return (
+    <>
+      <PageTitle />
+      <Container>
+        <CardList />
+      </Container>
+    </>
+  );
 };
