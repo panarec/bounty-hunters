@@ -6,12 +6,16 @@ export const FiltersForm = ({ heading, children }) => {
   const { redColor, whiteColor } = variables;
 
   return (
-    <Grid container sx={{ backgroundColor: redColor, padding: '2rem' }}>
+    <Grid container sx={{ backgroundColor: redColor, padding: '2rem', borderRadius: "0px 0px 5px 5px" }}>
       <Grid item container justifyContent="center">
         <Typography
           variant="h2"
           component="h4"
-          sx={{ fontFamily: 'Smokum', color: whiteColor , paddingBottom: '2rem' }}
+          sx={{
+            fontFamily: 'Smokum',
+            color: whiteColor,
+            paddingBottom: '2rem',
+          }}
         >
           {heading}
         </Typography>
