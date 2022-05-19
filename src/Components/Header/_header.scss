@@ -11,6 +11,11 @@
   font-size: 2.5rem;
   color: $bg-color;
   padding-block: 1rem;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .nav-link {

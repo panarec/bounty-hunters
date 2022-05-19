@@ -3,6 +3,7 @@ import { Container } from '@mui/material';
 
 import { MenuButton } from '../MenuButton';
 import { Navbar } from '../Navbar';
+import { PageTitle } from '../PageTitle/PageTitle';
 
 import './_header.scss';
 
