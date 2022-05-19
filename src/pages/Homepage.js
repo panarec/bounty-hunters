@@ -10,9 +10,9 @@ export const Homepage = () => {
     <>
       <PageTitle />
       <Container maxWidth="xl">
-        {/* <FiltersForm>
+        <FiltersForm>
           <CriminalsSearch />
-        </FiltersForm> */}
+        </FiltersForm>
         <CardList spacing={4}/>
       </Container>
     </>
