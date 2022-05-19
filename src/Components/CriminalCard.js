@@ -18,13 +18,11 @@ import { variables } from '../assets/variables';
 import { Stars } from './Stars';
 
 export const CriminalCard = ({ details, ...rest }) => {
-  const { redColor, redColorHovered, greenColor } = variables;
+  const { redColor, redColorHovered, greenColor, goldColor, bronzeColor, silverColor } = variables;
 
   const { title, images, description, reward_text } = details;
 
   const rewardAmount = reward_text?.split(' ').find((word) => word[0] === '$');
-
-  console.log(rewardAmount);
 
   return (
     <Grid item {...rest}>
@@ -81,7 +79,6 @@ export const CriminalCard = ({ details, ...rest }) => {
             my={2}
           >
             <Stars />
-            
           </Stack>
           <Typography
             variant="subtitle1"
