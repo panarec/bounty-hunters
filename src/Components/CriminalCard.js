@@ -28,6 +28,7 @@ export const CriminalCard = ({
     <Grid item {...rest}>
       <Card
         sx={{
+          margin: "0 auto",
           maxWidth: '17rem',
           textAlign: 'center',
           backgroundImage: `url(${bgImage})`,
