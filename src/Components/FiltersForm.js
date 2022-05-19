@@ -20,7 +20,7 @@ export const FiltersForm = ({ heading, children }) => {
           {heading}
         </Typography>
       </Grid>
-      <Grid item container rowGap={5} columnSpacing={3} justifyContent="center">
+      <Grid item container rowGap={5} columnSpacing={3} justifyContent="center" component="form">
         {children}
       </Grid>
     </Grid>

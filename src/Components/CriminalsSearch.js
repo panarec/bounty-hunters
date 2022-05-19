@@ -5,7 +5,7 @@ import { TextFieldFilter } from './TextFieldFilter';
 
 export const CriminalsSearch = () => {
   return (
-    <form>
+    <>
       <Filter>
         <TextFieldFilter label="Name" />
       </Filter>
@@ -30,6 +30,6 @@ export const CriminalsSearch = () => {
       <Filter>
         <CheckboxFilter label="Sex" />
       </Filter>
-    </form>
+    </>
   );
 };
