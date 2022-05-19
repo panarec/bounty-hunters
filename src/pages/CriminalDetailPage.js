@@ -10,7 +10,7 @@ export const CriminalDetailPage = () => {
   return (
     <>
       <Container>
-        <Grid container spacing={4} sx={{ marginBlock: '3rem' }}>
+        <Grid container spacing={4} sx={{ marginBlock: '8rem' }}>
           <Grid item md={8}>
             <CriminalDetailPhoto />
           </Grid>
