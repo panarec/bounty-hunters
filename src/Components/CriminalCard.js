@@ -18,7 +18,11 @@ import { variables } from '../assets/variables';
 import { Stars } from './Stars';
 
 export const CriminalCard = ({ details, ...rest }) => {
-  const { redColor, redColorHovered, greenColor, goldColor, bronzeColor, silverColor } = variables;
+  const {
+    redColor,
+    redColorHovered,
+    greenColor,
+  } = variables;
 
   const { title, images, description, reward_text } = details;
 

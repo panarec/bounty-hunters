@@ -1,7 +1,4 @@
 export const variables = {
-  bronzeColor: '#CD7F32',
-  silverColor: '#C0C0C0',
-  goldColor: 'FFD700',
   whiteColor: '#ffffff',
   greenColor: '#80af8d',
   redColor: '#dd6867',
