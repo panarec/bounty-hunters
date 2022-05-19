@@ -1,4 +1,4 @@
-import StarIcon from '@mui/icons-material/Star';
+import { Details } from '@mui/icons-material';
 import {
   Avatar,
   Button,
@@ -15,38 +15,45 @@ import {
 import { bgImage, placeHolder } from '../assets/images';
 import { variables } from '../assets/variables';
 
-export const CriminalCard = ({
-  title,
-  avatar,
-  shortDescription,
-  rewardAmount,
-  ...rest
-}) => {
+import { Stars } from './Stars';
+
+export const CriminalCard = ({ details, ...rest }) => {
   const { redColor, redColorHovered, greenColor } = variables;
+
+  const { title, images, description, reward_text } = details;
+
+  const rewardAmount = reward_text?.split(' ').find((word) => word[0] === '$');
+
+  console.log(rewardAmount);
 
   return (
     <Grid item {...rest}>
       <Card
         sx={{
-          margin: "0 auto",
+          margin: '0 auto',
           maxWidth: '17rem',
           textAlign: 'center',
           backgroundImage: `url(${bgImage})`,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          height: '100%',
         }}
       >
         <CardHeader
           title={title ? title : 'UNKNOWN NAME'}
-          titleTypographyProps={{ fontFamily: 'Smokum' }}
+          titleTypographyProps={{ fontFamily: 'Smokum', fontWeight: 'bold' }}
         />
 
         <CardMedia sx={{ position: 'relative' }}>
           <Avatar
-            src={avatar ? avatar : placeHolder}
+            src={images ? images[0].original : placeHolder}
             sx={{
               width: '10rem',
               height: '10rem',
               border: '2px solid black',
               margin: '0 auto',
+              filter: 'grayscale(100%)',
             }}
           />
           <Typography
@@ -62,7 +69,7 @@ export const CriminalCard = ({
               whiteSpace: 'nowrap',
             }}
           >
-            {rewardAmount ? rewardAmount : 'ELIMINATED'}
+            {rewardAmount ? rewardAmount : 'NO REWARD'}
           </Typography>
         </CardMedia>
         <CardContent>
@@ -73,13 +80,22 @@ export const CriminalCard = ({
             alignItems="center"
             my={2}
           >
-            <StarIcon />
-            <StarIcon fontSize="large" />
-            <StarIcon />
+            <Stars />
+            
           </Stack>
-          <Typography variant="subtitle1" component="p">
-            {shortDescription
-              ? shortDescription
+          <Typography
+            variant="subtitle1"
+            component="p"
+            sx={{
+              WebkitLineClamp: '3',
+              textOverflow: 'ellipsis',
+              display: '-webkit-box',
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+            }}
+          >
+            {description
+              ? description
               : 'Lorem ipsum dolor sit amet adisciplin etis dero varti.'}
           </Typography>
         </CardContent>

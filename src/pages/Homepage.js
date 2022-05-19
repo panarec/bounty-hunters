@@ -10,10 +10,10 @@ export const Homepage = () => {
     <>
       <PageTitle />
       <Container maxWidth="xl">
-        <FiltersForm>
+        {/* <FiltersForm>
           <CriminalsSearch />
-        </FiltersForm>
-        <CardList />
+        </FiltersForm> */}
+        <CardList spacing={4}/>
       </Container>
     </>
   );
