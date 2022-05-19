@@ -7,10 +7,13 @@ export const CardList = ({ spacing }) => {
   const [criminals, setCriminals] = useState([]);
 
   return (
-    <Grid container spacing={spacing}>
+    <Grid container spacing={spacing} sx={{ paddingBlock: '3rem' }}>
       {criminals.map((criminal, index) => (
         <CriminalCard key={index} />
       ))}
+      <CriminalCard xl={3} />
+      <CriminalCard xl={3} />
+      <CriminalCard xl={3} />
       <CriminalCard xl={3} />
     </Grid>
   );
