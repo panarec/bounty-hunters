@@ -1,6 +1,8 @@
+import { useRef } from 'react';
 import { Details } from '@mui/icons-material';
 import {
   Avatar,
+  Box,
   Button,
   Card,
   CardActions,
@@ -18,33 +20,30 @@ import { variables } from '../assets/variables';
 import { Stars } from './Stars';
 
 export const CriminalCard = ({ details, ...rest }) => {
-  const {
-    redColor,
-    redColorHovered,
-    greenColor,
-  } = variables;
+  const { redColor, redColorHovered, greenColor } = variables;
 
   const { title, images, description, reward_text } = details;
 
   const rewardAmount = reward_text?.split(' ').find((word) => word[0] === '$');
 
   return (
-    <Grid item {...rest}>
+    <Grid item container justifyContent="center" {...rest}>
       <Card
         sx={{
-          margin: '0 auto',
-          maxWidth: '17rem',
+          width: '17rem',
           textAlign: 'center',
           backgroundImage: `url(${bgImage})`,
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
           height: '100%',
         }}
       >
         <CardHeader
-          title={title ? title : 'UNKNOWN NAME'}
-          titleTypographyProps={{ fontFamily: 'Smokum', fontWeight: 'bold' }}
+          title={title ? title.substring(0, 25) : 'UNKNOWN NAME'}
+          titleTypographyProps={{
+            fontFamily: 'Smokum',
+            fontWeight: 'bold',
+          }}
         />
 
         <CardMedia sx={{ position: 'relative' }}>
@@ -74,7 +73,13 @@ export const CriminalCard = ({ details, ...rest }) => {
             {rewardAmount ? rewardAmount : 'NO REWARD'}
           </Typography>
         </CardMedia>
-        <CardContent>
+        <CardContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            flex: '1',
+          }}
+        >
           <Stack
             direction="row"
             spacing={2}
@@ -84,21 +89,24 @@ export const CriminalCard = ({ details, ...rest }) => {
           >
             <Stars />
           </Stack>
-          <Typography
-            variant="subtitle1"
-            component="p"
-            sx={{
-              WebkitLineClamp: '3',
-              textOverflow: 'ellipsis',
-              display: '-webkit-box',
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden',
-            }}
-          >
-            {description
-              ? description
-              : 'Lorem ipsum dolor sit amet adisciplin etis dero varti.'}
-          </Typography>
+          <Box sx={{display: "flex", flex: "1", justifyContent: "center"}}>
+            <Typography
+              variant="subtitle1"
+              component="p"
+              sx={{
+                WebkitLineClamp: '3',
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                alignSelf: 'center',
+              }}
+            >
+              {description
+                ? description
+                : 'Lorem ipsum dolor sit amet adisciplin etis dero varti.'}
+            </Typography>
+          </Box>
         </CardContent>
         <CardActions disableSpacing sx={{ padding: 0 }}>
           <Button

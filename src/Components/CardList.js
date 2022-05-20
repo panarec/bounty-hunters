@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Grid, Pagination } from '@mui/material';
+import { CircularProgress, Grid, Pagination } from '@mui/material';
 
 import { CriminalCard } from './CriminalCard';
 
@@ -26,20 +26,47 @@ export const CardList = ({ spacing }) => {
   }, [page]);
 
   const { total, items } = criminalsData;
+  const pages = Math.ceil(total / 20);
 
   console.log(criminalsData);
 
   return (
-    <Grid container spacing={spacing} sx={{ paddingBlock: '3rem' }}>
-      {loading === 'done' &&
+    <Grid
+      container
+      justifyContent="center"
+      spacing={spacing}
+      sx={{ paddingBlock: '3rem' }}
+    >
+      {loading === 'done' ? (
         items.map((criminal, index) => (
-          <CriminalCard key={index} xl={3} details={criminal} />
-        ))}
-      <Pagination
-        count={10}
-        sx={{ paddingBlock: '3rem', margin: '0 auto' }}
-        onChange={(e, page) => setPage(page)}
-      />
+          <CriminalCard
+            key={index}
+            xl={3}
+            lg={4}
+            md={6}
+            sm={12}
+            details={criminal}
+          />
+        ))
+      ) : (
+        <Grid
+          item
+          container
+          xl={12}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <CircularProgress size={250} sx={{ margin: '0 auto' }} />
+        </Grid>
+      )}
+
+      <Grid item container xl={12} justifyContent="center" alignItems="center">
+        <Pagination
+          count={pages}
+          sx={{ paddingBlock: '3rem' }}
+          onChange={(e, page) => setPage(page)}
+        />
+      </Grid>
     </Grid>
   );
 };
