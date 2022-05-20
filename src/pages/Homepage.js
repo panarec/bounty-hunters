@@ -10,7 +10,7 @@ export const Homepage = () => {
     <>
       <PageTitle />
       <Container maxWidth="xl">
-        <FiltersForm>
+        <FiltersForm heading="SEARCH">
           <CriminalsSearch />
         </FiltersForm>
         <CardList />
