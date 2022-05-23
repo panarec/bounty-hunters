@@ -104,7 +104,7 @@ export const CriminalCard = ({ criminalDetails, grid_columns }) => {
                 alignSelf: 'center',
               }}
             >
-              {description}
+              {description || ""}
             </Typography>
           </Box>
         </CardContent>
