@@ -24,7 +24,8 @@ export const CriminalCard = ({ criminalDetails, grid_columns }) => {
   const { redColor, redColorHovered, greenColor } = variables;
   const { title, images, description, reward_text } = criminalDetails;
 
-  const rewardAmount = reward_text?.split(' ').find((word) => word[0] === '$');
+  const rewardAmount = reward_text?.match(/\$(\d,*)*/g);
+
 
   return (
     <Grid item container justifyContent="center" {...grid_columns}>
