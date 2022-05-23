@@ -28,6 +28,13 @@ export const CardList = ({ spacing }) => {
   const { total, items } = criminalsData;
   const pages = Math.ceil(total / 20);
 
+  const grid_columns = {
+    xl: 3,
+    lg: 4,
+    md: 6,
+    sm: 12,
+  };
+
   return (
     <Grid
       container
@@ -36,14 +43,11 @@ export const CardList = ({ spacing }) => {
       sx={{ paddingBlock: '3rem' }}
     >
       {loading === 'done' ? (
-        items.map((criminal, index) => (
+        items.map((criminal) => (
           <CriminalCard
-            key={index}
-            xl={3}
-            lg={4}
-            md={6}
-            sm={12}
-            details={criminal}
+            key={criminal.uid}
+            grid_columns={grid_columns}
+            criminalDetails={criminal}
           />
         ))
       ) : (

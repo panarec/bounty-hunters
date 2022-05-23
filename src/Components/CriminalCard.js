@@ -17,15 +17,17 @@ import { variables } from '../assets/variables';
 
 import { Stars } from './Stars';
 
-export const CriminalCard = ({ details, ...rest }) => {
-  const { redColor, redColorHovered, greenColor } = variables;
+const UNKNOWN_NAME = 'UNKNOWN NAME';
+const NO_REWARD = 'NO REWARD';
 
-  const { title, images, description, reward_text } = details;
+export const CriminalCard = ({ criminalDetails, grid_columns }) => {
+  const { redColor, redColorHovered, greenColor } = variables;
+  const { title, images, description, reward_text } = criminalDetails;
 
   const rewardAmount = reward_text?.split(' ').find((word) => word[0] === '$');
 
   return (
-    <Grid item container justifyContent="center" {...rest}>
+    <Grid item container justifyContent="center" {...grid_columns}>
       <Card
         sx={{
           width: '17rem',
@@ -37,7 +39,7 @@ export const CriminalCard = ({ details, ...rest }) => {
         }}
       >
         <CardHeader
-          title={title ? title.substring(0, 25) : 'UNKNOWN NAME'}
+          title={title ? title.substring(0, 25) : UNKNOWN_NAME}
           titleTypographyProps={{
             fontFamily: 'Smokum',
             fontWeight: 'bold',
@@ -46,7 +48,9 @@ export const CriminalCard = ({ details, ...rest }) => {
 
         <CardMedia sx={{ position: 'relative' }}>
           <Avatar
-            src={images ? images[0].original : placeHolder}
+            src={
+              images && images[0]?.original ? images[0].original : placeHolder
+            }
             sx={{
               width: '10rem',
               height: '10rem',
@@ -68,7 +72,7 @@ export const CriminalCard = ({ details, ...rest }) => {
               whiteSpace: 'nowrap',
             }}
           >
-            {rewardAmount ? rewardAmount : 'NO REWARD'}
+            {rewardAmount ? rewardAmount : NO_REWARD}
           </Typography>
         </CardMedia>
         <CardContent
@@ -100,9 +104,7 @@ export const CriminalCard = ({ details, ...rest }) => {
                 alignSelf: 'center',
               }}
             >
-              {description
-                ? description
-                : 'Lorem ipsum dolor sit amet adisciplin etis dero varti.'}
+              {description}
             </Typography>
           </Box>
         </CardContent>
