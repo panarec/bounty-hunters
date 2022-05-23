@@ -1,5 +1,4 @@
 import { TextField } from '@mui/material';
-import { borderColor, maxWidth } from '@mui/system';
 
 import { variables } from '../assets/variables';
 
