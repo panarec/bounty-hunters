@@ -9,7 +9,7 @@ const App = () => {
     <BrowserRouter>
       <ContextProvider>
         <Layout>
-          <Routes></Routes>
+          <Routes />
         </Layout>
       </ContextProvider>
     </BrowserRouter>
