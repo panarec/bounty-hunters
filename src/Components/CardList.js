@@ -28,8 +28,6 @@ export const CardList = ({ spacing }) => {
   const { total, items } = criminalsData;
   const pages = Math.ceil(total / 20);
 
-  console.log(criminalsData);
-
   return (
     <Grid
       container
