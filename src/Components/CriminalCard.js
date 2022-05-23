@@ -1,5 +1,3 @@
-import { useRef } from 'react';
-import { Details } from '@mui/icons-material';
 import {
   Avatar,
   Box,
@@ -89,7 +87,7 @@ export const CriminalCard = ({ details, ...rest }) => {
           >
             <Stars />
           </Stack>
-          <Box sx={{display: "flex", flex: "1", justifyContent: "center"}}>
+          <Box sx={{ display: 'flex', flex: '1', justifyContent: 'center' }}>
             <Typography
               variant="subtitle1"
               component="p"
