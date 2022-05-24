@@ -18,7 +18,7 @@ export const CardList = ({ spacing }) => {
     isLoading,
     isError,
     data: { total, items } = {},
-  } = useQuery('criminals', fetchCriminalsData);
+  } = useQuery([page], fetchCriminalsData);
 
   const pages = Math.ceil(total / 20);
 
@@ -36,30 +36,13 @@ export const CardList = ({ spacing }) => {
       spacing={spacing}
       sx={{ paddingBlock: '3rem' }}
     >
-      {items && (
-        <>
-          {items.map((criminal) => (
-            <CriminalCard
-              key={criminal.uid}
-              grid_columns={grid_columns}
-              criminalDetails={criminal}
-            />
-          ))}
-          <Grid
-            item
-            container
-            xl={12}
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Pagination
-              count={pages}
-              sx={{ paddingBlock: '3rem' }}
-              onChange={(e, page) => setPage(page)}
-            />
-          </Grid>
-        </>
-      )}
+      {items.map((criminal) => (
+        <CriminalCard
+          key={criminal.uid}
+          grid_columns={grid_columns}
+          criminalDetails={criminal}
+        />
+      ))}
       {isLoading && (
         <Grid
           item
@@ -82,6 +65,13 @@ export const CardList = ({ spacing }) => {
           Not found component
         </Grid>
       )}
+      <Grid item container xl={12} justifyContent="center" alignItems="center">
+        <Pagination
+          count={pages}
+          sx={{ paddingBlock: '3rem' }}
+          onChange={(e, page) => setPage(page)}
+        />
+      </Grid>
     </Grid>
   );
 };
