@@ -18,7 +18,6 @@ export const CardList = ({ spacing }) => {
     isLoading,
     isError,
     data: { total, items } = {},
-    error,
   } = useQuery('criminals', fetchCriminalsData);
 
   const pages = Math.ceil(total / 20);
@@ -37,15 +36,31 @@ export const CardList = ({ spacing }) => {
       spacing={spacing}
       sx={{ paddingBlock: '3rem' }}
     >
-      {!isLoading ? (
-        items.map((criminal) => (
-          <CriminalCard
-            key={criminal.uid}
-            grid_columns={grid_columns}
-            criminalDetails={criminal}
-          />
-        ))
-      ) : (
+      {items && (
+        <>
+          {items.map((criminal) => (
+            <CriminalCard
+              key={criminal.uid}
+              grid_columns={grid_columns}
+              criminalDetails={criminal}
+            />
+          ))}
+          <Grid
+            item
+            container
+            xl={12}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Pagination
+              count={pages}
+              sx={{ paddingBlock: '3rem' }}
+              onChange={(e, page) => setPage(page)}
+            />
+          </Grid>
+        </>
+      )}
+      {isLoading && (
         <Grid
           item
           container
@@ -56,14 +71,17 @@ export const CardList = ({ spacing }) => {
           <CircularProgress size={250} sx={{ margin: '0 auto' }} />
         </Grid>
       )}
-
-      <Grid item container xl={12} justifyContent="center" alignItems="center">
-        <Pagination
-          count={pages}
-          sx={{ paddingBlock: '3rem' }}
-          onChange={(e, page) => setPage(page)}
-        />
-      </Grid>
+      {isError && (
+        <Grid
+          item
+          container
+          xl={12}
+          justifyContent="center"
+          alignItems="center"
+        >
+          Not found component
+        </Grid>
+      )}
     </Grid>
   );
 };
