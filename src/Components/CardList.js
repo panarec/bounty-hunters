@@ -1,31 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CircularProgress, Grid, Pagination } from '@mui/material';
+import { useQuery } from 'react-query';
 
 import { CriminalCard } from './CriminalCard';
 
 export const CardList = ({ spacing }) => {
-  const [criminalsData, setCriminalsData] = useState({});
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState('');
 
-  useEffect(() => {
-    (async () => {
-      setLoading('loading');
-      try {
-        const response = await fetch(
-          `https://api.fbi.gov/wanted/v1/list?page=${page}`,
-        );
-        const data = await response.json();
-        setCriminalsData(data);
-        setLoading('done');
-      } catch (error) {
-        console.error(error);
-        setLoading('error');
-      }
-    })();
-  }, [page]);
+  const fetchCriminalsData = async () => {
+    const response = await fetch(
+      `https://api.fbi.gov/wanted/v1/list?page=${page}`,
+    );
+    return response.json();
+  };
 
-  const { total, items } = criminalsData;
+  const {
+    isLoading,
+    isError,
+    data: { total, items } = {},
+    error,
+  } = useQuery('criminals', fetchCriminalsData);
+
   const pages = Math.ceil(total / 20);
 
   const grid_columns = {
@@ -42,7 +37,7 @@ export const CardList = ({ spacing }) => {
       spacing={spacing}
       sx={{ paddingBlock: '3rem' }}
     >
-      {loading === 'done' ? (
+      {!isLoading ? (
         items.map((criminal) => (
           <CriminalCard
             key={criminal.uid}
