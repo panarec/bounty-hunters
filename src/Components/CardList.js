@@ -36,7 +36,7 @@ export const CardList = ({ spacing }) => {
       spacing={spacing}
       sx={{ paddingBlock: '3rem' }}
     >
-      {items.map((criminal) => (
+      {items?.map((criminal) => (
         <CriminalCard
           key={criminal.uid}
           grid_columns={grid_columns}
