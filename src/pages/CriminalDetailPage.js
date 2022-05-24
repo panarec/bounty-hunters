@@ -54,6 +54,7 @@ export const CriminalDetailPage = () => {
           </Button>
           <Button
             variant="text"
+            href="#details"
             sx={{
               marginBlock: '5rem',
               color: redColor,

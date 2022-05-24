@@ -19,6 +19,7 @@ export const Description = () => {
         marginBlock: '3rem',
       }}
       component="article"
+      id="details"
     >
       <Typography
         variant="h4"
