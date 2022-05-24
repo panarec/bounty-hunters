@@ -1,4 +1,4 @@
-import { placeHolder } from '../../assets/images/index';
+import { placeHolder } from '../../assets/images';
 
 import "../CriminalDetailPhoto/_criminalDetailPhoto.scss"
 

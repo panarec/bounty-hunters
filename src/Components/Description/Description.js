@@ -4,6 +4,9 @@ import { variables } from '../../assets/variables';
 
 import './_description.scss';
 
+const DESCRIPTION = 'DESCRIPTION';
+const DETAILS = 'DETAILS'
+
 export const Description = () => {
   const { smokumFont } = variables;
 
@@ -15,13 +18,14 @@ export const Description = () => {
         padding: '2rem',
         marginBlock: '3rem',
       }}
+      component="article"
     >
       <Typography
         variant="h4"
         component="div"
         sx={{ fontFamily: smokumFont, paddingBottom: '1rem' }}
       >
-        DESCRIPTION
+        {DESCRIPTION}
       </Typography>
       <Typography variant="subtitle1" component="div">
         <p>
@@ -51,7 +55,7 @@ export const Description = () => {
         component="div"
         sx={{ fontFamily: smokumFont, paddingBottom: '1rem', width: "100%"}}
       >
-        DETAILS
+        {DETAILS}
       </Typography>
       <ul className="details-list">
         <Typography variant="subtitle1" component="li">
