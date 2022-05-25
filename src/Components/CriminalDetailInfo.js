@@ -8,6 +8,7 @@ import { BookingControls } from './BookingControls';
 export const CriminalDetailInfo = () => {
   const { smokumFont, ryeFont, greenColor, redColor } = variables;
 
+
   return (
     <Grid item md={4}>
       <Typography
