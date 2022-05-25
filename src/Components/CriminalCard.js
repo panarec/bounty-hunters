@@ -12,7 +12,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import { bgImage, placeHolder } from '../assets/images';
+import { bgImage, placeHolder } from '../assets/images/';
 import { variables } from '../assets/variables';
 
 import { Stars } from './Stars';
@@ -31,7 +31,8 @@ export const CriminalCard = ({ criminalDetails, grid_columns }) => {
     <Grid item container justifyContent="center" {...grid_columns}>
       <Card
         sx={{
-          width: '17rem',
+          margin: '0 auto',
+          maxWidth: '17rem',
           textAlign: 'center',
           backgroundImage: `url(${bgImage})`,
           display: 'flex',

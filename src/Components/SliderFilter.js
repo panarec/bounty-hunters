@@ -7,12 +7,14 @@ export const SliderFilter = ({ min, max, title, ...rest }) => {
 
   return (
     <>
-      <Typography gutterBottom>{title}</Typography>
+      <Typography gutterBottom sx={{ color: whiteColor }}>
+        {title}
+      </Typography>
       <Stack spacing={2} direction="row">
         <Typography
           variant="body1"
           component="span"
-          sx={{ whiteSpace: 'nowrap' }}
+          sx={{ whiteSpace: 'nowrap', color: whiteColor }}
         >
           {min}
         </Typography>
@@ -27,7 +29,7 @@ export const SliderFilter = ({ min, max, title, ...rest }) => {
         <Typography
           variant="body1"
           component="span"
-          sx={{ whiteSpace: 'nowrap' }}
+          sx={{ whiteSpace: 'nowrap', color: whiteColor }}
         >
           {max}
         </Typography>
