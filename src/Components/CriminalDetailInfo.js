@@ -5,9 +5,9 @@ import { variables } from '../assets/variables';
 
 import { BookingControls } from './BookingControls';
 
-export const CriminalDetailInfo = () => {
+export const CriminalDetailInfo = ({ data }) => {
   const { smokumFont, ryeFont, greenColor, redColor } = variables;
-
+  const { description, title, reward_text } = data;
 
   return (
     <Grid item md={4}>
@@ -16,13 +16,13 @@ export const CriminalDetailInfo = () => {
         component="div"
         sx={{ fontFamily: smokumFont, paddingBottom: '3rem' }}
       >
-        BILLY THE KID
+        {title}
       </Typography>
       <Typography variant="subtitle1" component="p">
-        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-        molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero
-        eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
-        zzril delenit augue duis dolore te feugait nulla facilisi.
+        {description}
+      </Typography>
+      <Typography variant="subtitle1" component="p" pt={3}>
+        {reward_text}
       </Typography>
       <Typography
         variant="h2"
@@ -46,7 +46,7 @@ export const CriminalDetailInfo = () => {
           textDecoration: 'underline',
         }}
       >
-        Read more about BILLY THE KID
+        Read more about {title}
       </Button>
     </Grid>
   );

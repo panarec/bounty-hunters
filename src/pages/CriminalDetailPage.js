@@ -10,22 +10,29 @@ import { FetchCriminal } from '../Components/Fetch';
 export const CriminalDetailPage = () => {
   const { slug } = useParams();
 
-  const { isLoading, isError, data: {title, caution, reward_text, images, description}, data } = useQuery(
-    `[${slug},'@wanted-person', ${slug}]`,
-    () => FetchCriminal('@wanted-person', `${slug}`),
+  const {
+    isLoading,
+    isError,
+    data: { images } = {},
+    data,
+  } = useQuery(`[${slug},'@wanted-person', ${slug}]`, () =>
+    FetchCriminal('@wanted-person', `${slug}`),
   );
 
-  console.log(data);
 
   return (
     <Container>
-      <Grid container spacing={4} sx={{ marginBlock: '8rem' }}>
-        <Grid item md={8}>
-          <CriminalDetailPhoto />
-        </Grid>
-        <CriminalDetailInfo />
-      </Grid>
-      <Description />
+      {!isLoading && (
+        <>
+          <Grid container spacing={4} sx={{ marginBlock: '8rem' }}>
+            <Grid item md={8}>
+              <CriminalDetailPhoto data={data} />
+            </Grid>
+            <CriminalDetailInfo data={data} />
+          </Grid>
+          <Description data={data} />
+        </>
+      )}
     </Container>
   );
 };
