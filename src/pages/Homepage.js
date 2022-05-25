@@ -13,7 +13,7 @@ export const Homepage = () => {
         <FiltersForm heading="SEARCH">
           <CriminalsSearch />
         </FiltersForm>
-        <CardList />
+        <CardList spacing={4} />
       </Container>
     </>
   );

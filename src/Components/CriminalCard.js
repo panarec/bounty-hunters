@@ -1,6 +1,6 @@
-import StarIcon from '@mui/icons-material/Star';
 import {
   Avatar,
+  Box,
   Button,
   Card,
   CardActions,
@@ -15,38 +15,50 @@ import {
 import { bgImage, placeHolder } from '../assets/images/';
 import { variables } from '../assets/variables';
 
-export const CriminalCard = ({
-  title,
-  avatar,
-  shortDescription,
-  rewardAmount,
-  ...rest
-}) => {
+import { Stars } from './Stars';
+
+const UNKNOWN_NAME = 'UNKNOWN NAME';
+const NO_REWARD = 'NO REWARD';
+
+export const CriminalCard = ({ criminalDetails, grid_columns }) => {
   const { redColor, redColorHovered, greenColor } = variables;
+  const { title, images, description, reward_text } = criminalDetails;
+
+  const rewardAmount = reward_text?.match(/\$(\d,*)*/g);
+
 
   return (
-    <Grid item {...rest}>
+    <Grid item container justifyContent="center" {...grid_columns}>
       <Card
         sx={{
           margin: '0 auto',
           maxWidth: '17rem',
           textAlign: 'center',
           backgroundImage: `url(${bgImage})`,
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
         }}
       >
         <CardHeader
-          title={title ? title : 'UNKNOWN NAME'}
-          titleTypographyProps={{ fontFamily: 'Smokum' }}
+          title={title ? title.substring(0, 25) : UNKNOWN_NAME}
+          titleTypographyProps={{
+            fontFamily: 'Smokum',
+            fontWeight: 'bold',
+          }}
         />
 
         <CardMedia sx={{ position: 'relative' }}>
           <Avatar
-            src={avatar ? avatar : placeHolder}
+            src={
+              images && images[0]?.original ? images[0].original : placeHolder
+            }
             sx={{
               width: '10rem',
               height: '10rem',
               border: '2px solid black',
               margin: '0 auto',
+              filter: 'grayscale(100%)',
             }}
           />
           <Typography
@@ -62,10 +74,16 @@ export const CriminalCard = ({
               whiteSpace: 'nowrap',
             }}
           >
-            {rewardAmount ? rewardAmount : 'ELIMINATED'}
+            {rewardAmount ? rewardAmount : NO_REWARD}
           </Typography>
         </CardMedia>
-        <CardContent>
+        <CardContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            flex: '1',
+          }}
+        >
           <Stack
             direction="row"
             spacing={2}
@@ -73,15 +91,24 @@ export const CriminalCard = ({
             alignItems="center"
             my={2}
           >
-            <StarIcon />
-            <StarIcon fontSize="large" />
-            <StarIcon />
+            <Stars />
           </Stack>
-          <Typography variant="subtitle1" component="p">
-            {shortDescription
-              ? shortDescription
-              : 'Lorem ipsum dolor sit amet adisciplin etis dero varti.'}
-          </Typography>
+          <Box sx={{ display: 'flex', flex: '1', justifyContent: 'center' }}>
+            <Typography
+              variant="subtitle1"
+              component="p"
+              sx={{
+                WebkitLineClamp: '3',
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                alignSelf: 'center',
+              }}
+            >
+              {description || ""}
+            </Typography>
+          </Box>
         </CardContent>
         <CardActions disableSpacing sx={{ padding: 0 }}>
           <Button

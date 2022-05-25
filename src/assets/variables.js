@@ -1,5 +1,5 @@
 export const variables = {
-  whiteColor: "#ffffff",
+  whiteColor: '#ffffff',
   greenColor: '#80af8d',
   redColor: '#dd6867',
   redColorHovered: '#B65150',

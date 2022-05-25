@@ -1,20 +1,71 @@
 import { useState } from 'react';
-import { Grid } from '@mui/material';
+import { CircularProgress, Grid, Pagination } from '@mui/material';
+import { useQuery } from 'react-query';
 
 import { CriminalCard } from './CriminalCard';
+import { FetchCriminals } from './Fetch';
 
 export const CardList = ({ spacing }) => {
-  const [criminals, setCriminals] = useState([]);
+  const [page, setPage] = useState(1);
+
+  const {
+    isLoading,
+    isError,
+    data: { total, items } = {},
+  } = useQuery([page], () => FetchCriminals('list', `page=${page}`));
+
+  const pages = Math.ceil(total / 20);
+
+  const grid_columns = {
+    xl: 3,
+    lg: 4,
+    md: 6,
+    sm: 12,
+  };
 
   return (
-    <Grid container spacing={spacing} sx={{ paddingBlock: '3rem' }}>
-      {criminals.map((criminal, index) => (
-        <CriminalCard key={index} />
+    <Grid
+      container
+      justifyContent="center"
+      spacing={spacing}
+      sx={{ paddingBlock: '3rem' }}
+    >
+      {items?.map((criminal) => (
+        <CriminalCard
+          key={criminal.uid}
+          grid_columns={grid_columns}
+          criminalDetails={criminal}
+        />
       ))}
-      <CriminalCard xl={3} />
-      <CriminalCard xl={3} />
-      <CriminalCard xl={3} />
-      <CriminalCard xl={3} />
+      {isLoading && (
+        <Grid
+          item
+          container
+          xl={12}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <CircularProgress size={250} sx={{ margin: '0 auto' }} />
+        </Grid>
+      )}
+      {isError && (
+        <Grid
+          item
+          container
+          xl={12}
+          justifyContent="center"
+          alignItems="center"
+        >
+          Not found component
+        </Grid>
+      )}
+      <Grid item container xl={12} justifyContent="center" alignItems="center">
+        <Pagination
+          count={pages}
+          sx={{ paddingBlock: '3rem' }}
+          onChange={(e, page) => setPage(page)}
+        />
+      </Grid>
     </Grid>
   );
 };
