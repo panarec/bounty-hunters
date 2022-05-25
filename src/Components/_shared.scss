@@ -1,6 +1,7 @@
-@import '../../assets/variables';
+@import '../../src/assets/variables';
 
 .link {
   text-decoration: none;
   color: $white-color;
+  width: 100%;
 }

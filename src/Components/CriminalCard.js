@@ -11,21 +11,23 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import { bgImage, placeHolder } from '../assets/images/';
 import { variables } from '../assets/variables';
 
 import { Stars } from './Stars';
 
+import './_shared.scss';
+
 const UNKNOWN_NAME = 'UNKNOWN NAME';
 const NO_REWARD = 'NO REWARD';
 
 export const CriminalCard = ({ criminalDetails, grid_columns }) => {
   const { redColor, redColorHovered, greenColor } = variables;
-  const { title, images, description, reward_text } = criminalDetails;
+  const { title, images, description, reward_text, uid } = criminalDetails;
 
   const rewardAmount = reward_text?.match(/\$(\d,*)*/g);
-
 
   return (
     <Grid item container justifyContent="center" {...grid_columns}>
@@ -106,24 +108,26 @@ export const CriminalCard = ({ criminalDetails, grid_columns }) => {
                 alignSelf: 'center',
               }}
             >
-              {description || ""}
+              {description || ''}
             </Typography>
           </Box>
         </CardContent>
         <CardActions disableSpacing sx={{ padding: 0 }}>
-          <Button
-            variant="contained"
-            size="large"
-            fullWidth
-            sx={{
-              backgroundColor: redColor,
-              '&:hover': {
-                backgroundColor: redColorHovered,
-              },
-            }}
-          >
-            DETAIL
-          </Button>
+          <Link className="link" to={`/detail/${uid}`}>
+            <Button
+              variant="contained"
+              size="large"
+              fullWidth
+              sx={{
+                backgroundColor: redColor,
+                '&:hover': {
+                  backgroundColor: redColorHovered,
+                },
+              }}
+            >
+              DETAIL
+            </Button>
+          </Link>
         </CardActions>
       </Card>
     </Grid>
