@@ -3,22 +3,16 @@ import { CircularProgress, Grid, Pagination } from '@mui/material';
 import { useQuery } from 'react-query';
 
 import { CriminalCard } from './CriminalCard';
+import { FetchCriminals } from './Fetch';
 
 export const CardList = ({ spacing }) => {
   const [page, setPage] = useState(1);
-
-  const fetchCriminalsData = async () => {
-    const response = await fetch(
-      `https://api.fbi.gov/wanted/v1/list?page=${page}`,
-    );
-    return response.json();
-  };
 
   const {
     isLoading,
     isError,
     data: { total, items } = {},
-  } = useQuery([page], fetchCriminalsData);
+  } = useQuery([page], () => FetchCriminals('list', `page=${page}`));
 
   const pages = Math.ceil(total / 20);
 
