@@ -12,7 +12,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import { bgImage, placeHolder } from '../assets/images';
+import { bgImage, placeHolder } from '../assets/images/';
 import { variables } from '../assets/variables';
 
 export const CriminalCard = ({
@@ -28,7 +28,7 @@ export const CriminalCard = ({
     <Grid item {...rest}>
       <Card
         sx={{
-          margin: "0 auto",
+          margin: '0 auto',
           maxWidth: '17rem',
           textAlign: 'center',
           backgroundImage: `url(${bgImage})`,
