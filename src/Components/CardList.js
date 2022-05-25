@@ -12,8 +12,8 @@ export const CardList = ({ spacing }) => {
     isLoading,
     isError,
     data: { total, items } = {},
-  } = useQuery([page, 'list', `page=${page}`], () =>
-    FetchCriminals('list', `page=${page}`),
+  } = useQuery([page, 'wanted/v1/list', `page=${page}`], () =>
+    FetchCriminals('wanted/v1/list', `page=${page}`),
   );
 
   const pages = Math.ceil(total / 20);
