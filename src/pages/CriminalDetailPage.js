@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button, Container, Grid, Typography } from '@mui/material';
 
 import { variables } from '../assets/variables';
@@ -5,8 +6,22 @@ import { CriminalDetailPhoto } from '../Components/CriminalDetailPhoto/CriminalD
 import { Description } from '../Components/Description/Description';
 
 export const CriminalDetailPage = () => {
+  const [criminalState, setCriminalState] = useState('free');
   const { smokumFont, ryeFont, greenColor, redColor, redColorHovered } =
     variables;
+
+  const handleBookClick = (e) => {
+    if (criminalState === 'free') {
+      setCriminalState('reserved');
+    } else if (criminalState === 'reserved') {
+      setCriminalState('eliminated');
+    }
+  };
+
+  const handleUnbookClick = (e) => {
+    setCriminalState('free');
+  };
+
   return (
     <Container>
       <Grid container spacing={4} sx={{ marginBlock: '8rem' }}>
@@ -39,19 +54,55 @@ export const CriminalDetailPage = () => {
           >
             $10 000
           </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            fullWidth
-            sx={{
-              backgroundColor: redColor,
-              '&:hover': {
-                backgroundColor: redColorHovered,
-              },
-            }}
-          >
-            RESERVE
-          </Button>
+          {criminalState !== 'eliminated' && (
+            <Button
+              variant="contained"
+              size="large"
+              fullWidth
+              onClick={handleBookClick}
+              sx={{
+                backgroundColor: redColor,
+                '&:hover': {
+                  backgroundColor: redColorHovered,
+                },
+              }}
+            >
+              {criminalState === 'free' ? 'BOOK' : 'ELIMINATE'}
+            </Button>
+          )}
+          {criminalState === 'reserved' && (
+            <Button
+              variant="outlined"
+              size="large"
+              fullWidth
+              onClick={handleUnbookClick}
+              sx={{
+                marginTop: '1rem',
+                borderColor: redColor,
+                color: redColor,
+                '&:hover': {
+                  borderColor: redColor,
+                  color: redColor,
+                },
+              }}
+            >
+              UNBOOK
+            </Button>
+          )}
+          {criminalState === 'eliminated' && (
+            <Typography
+              variant="h4"
+              component="div"
+              sx={{
+                fontFamily: ryeFont,
+                color: redColor,
+                textAlign: 'center',
+                marginBlock: '3rem',
+              }}
+            >
+              ELIMINATED
+            </Typography>
+          )}
           <Button
             variant="text"
             href="#details"
