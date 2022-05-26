@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 
 import { CriminalCard } from './CriminalCard';
 import { FetchCriminals } from './Fetch';
+import { Loading } from './Loading';
 
 export const CardList = ({ spacing }) => {
   const [page, setPage] = useState(1);
@@ -39,17 +40,7 @@ export const CardList = ({ spacing }) => {
           criminalDetails={criminal}
         />
       ))}
-      {isLoading && (
-        <Grid
-          item
-          container
-          xl={12}
-          justifyContent="center"
-          alignItems="center"
-        >
-          <CircularProgress size={250} sx={{ margin: '0 auto' }} />
-        </Grid>
-      )}
+      <Loading isLoading={isLoading} />
       {isError && (
         <Grid
           item

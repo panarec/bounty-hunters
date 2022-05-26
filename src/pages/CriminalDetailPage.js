@@ -6,6 +6,7 @@ import { CriminalDetailInfo } from '../Components/CriminalDetailInfo';
 import { CriminalDetailPhoto } from '../Components/CriminalDetailPhoto/CriminalDetailPhoto';
 import { Description } from '../Components/Description/Description';
 import { FetchCriminal } from '../Components/Fetch';
+import { Loading } from '../Components/Loading';
 
 export const CriminalDetailPage = () => {
   const { slug } = useParams();
@@ -19,20 +20,21 @@ export const CriminalDetailPage = () => {
     FetchCriminal('@wanted-person', `${slug}`),
   );
 
-
   return (
     <Container>
-      {!isLoading && (
-        <>
-          <Grid container spacing={4} sx={{ marginBlock: '8rem' }}>
+      <Grid container spacing={4} sx={{ marginBlock: '8rem' }}>
+        {!isLoading && data && (
+          <>
             <Grid item md={8}>
               <CriminalDetailPhoto data={data} />
             </Grid>
             <CriminalDetailInfo data={data} />
-          </Grid>
-          <Description data={data} />
-        </>
-      )}
+            <Description data={data} />
+          </>
+        )}
+        <Loading isLoading={isLoading} />
+        {isError && <div>Not found component</div>}
+      </Grid>
     </Container>
   );
 };
