@@ -11,24 +11,23 @@ const DETAILS = 'DETAILS';
 export const Description = ({ data }) => {
   const { smokumFont } = variables;
 
-  const {
-    caution,
-    reward_text,
-    url,
-    warning_message,
-    occupations,
-    modified,
-    files,
-    images,
-    uid,
-    path,
-    ncic,
-    id,
-    coordinates,
-    ...details
-  } = data;
+  const { caution } = data;
 
-  console.log(data);
+  const excludedData = [
+    'caution',
+    'reward_text',
+    'url',
+    'warning_message',
+    'occupations',
+    'modified',
+    'files',
+    'images',
+    'uid',
+    'path',
+    'ncic',
+    'id',
+    'coordinates',
+  ];
 
   return (
     <Grid
@@ -41,16 +40,20 @@ export const Description = ({ data }) => {
       component="article"
       id="details"
     >
-      <Typography
-        variant="h4"
-        component="div"
-        sx={{ fontFamily: smokumFont, paddingBottom: '1rem' }}
-      >
-        {DESCRIPTION}
-      </Typography>
-      <Typography variant="subtitle1" component="div">
-        {caution}
-      </Typography>
+      {caution && (
+        <>
+          <Typography
+            variant="h4"
+            component="div"
+            sx={{ fontFamily: smokumFont, paddingBottom: '1rem' }}
+          >
+            {DESCRIPTION}
+          </Typography>
+          <Typography variant="subtitle1" component="div">
+            {caution}
+          </Typography>
+        </>
+      )}
       <Typography
         variant="h4"
         component="div"
@@ -59,12 +62,13 @@ export const Description = ({ data }) => {
         {DETAILS}
       </Typography>
       <ul className="details-list">
-        {Object.entries(details).map(
-          (item) =>
-            item[1] !== null && (
+        {Object.entries(data).map(
+          (entry) =>
+            !excludedData.includes(entry[0]) &&
+            entry[1] !== null && (
               <Typography variant="subtitle1" component="li" py={1}>
-                <strong>{formatDetailsKey(item[0])}:</strong>{' '}
-                {Array.isArray(item[1]) ? item[1].join(', ') : item[1]}
+                <strong>{formatDetailsKey(entry[0])}:</strong>{' '}
+                {Array.isArray(entry[1]) ? entry[1].join(', ') : entry[1]}
               </Typography>
             ),
         )}
