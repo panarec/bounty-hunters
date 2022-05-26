@@ -21,7 +21,7 @@ export const CriminalDetailPage = () => {
       <Grid container spacing={4} sx={{ marginBlock: '8rem' }}>
         {!isLoading && data && (
           <>
-            <Grid item md={8}>
+            <Grid container item md={8} justifyContent="center" alignItems="center">
               <CriminalDetailPhoto data={data} />
             </Grid>
             <CriminalDetailInfo data={data} />
