@@ -11,13 +11,9 @@ import { Loading } from '../Components/Loading';
 export const CriminalDetailPage = () => {
   const { slug } = useParams();
 
-  const {
-    isLoading,
-    isError,
-    data: { images } = {},
-    data,
-  } = useQuery(`[${slug},'@wanted-person', ${slug}]`, () =>
-    FetchCriminal('@wanted-person', `${slug}`),
+  const { isLoading, isError, data } = useQuery(
+    `[${slug},'@wanted-person', ${slug}]`,
+    () => FetchCriminal('@wanted-person', `${slug}`),
   );
 
   return (
