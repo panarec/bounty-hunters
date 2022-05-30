@@ -86,7 +86,7 @@ export const CardList = ({ spacing }) => {
         />
       ))}
       <Loading isLoading={isLoading} />
-      {isError && (
+      {(isError || filteredData.length < 1) && (
         <Grid
           item
           container
@@ -94,7 +94,7 @@ export const CardList = ({ spacing }) => {
           justifyContent="center"
           alignItems="center"
         >
-          Not found component
+          "Not found" component
         </Grid>
       )}
       <Grid item container xl={12} justifyContent="center" alignItems="center">
