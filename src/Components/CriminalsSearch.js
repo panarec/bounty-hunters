@@ -10,7 +10,7 @@ export const CriminalsSearch = () => {
         <TextFieldFilter label="Name" />
       </Filter>
       <Filter>
-        <TextFieldFilter label="Age" type="number" />
+        <TextFieldFilter label="Weight" type="number" />
       </Filter>
       <Filter>
         <TextFieldFilter label="Nationality" select />
