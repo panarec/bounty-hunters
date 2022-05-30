@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { CircularProgress, Grid, Pagination } from '@mui/material';
+import { Grid, Pagination } from '@mui/material';
 import { useQuery } from 'react-query';
 
 import { FilterContext } from '../FilterContext';
@@ -22,28 +22,22 @@ export const CardList = ({ spacing }) => {
     isLoading,
     isError,
     data: { total, items } = {},
-    data,
   } = useQuery([page, '@wanted', `page=${page}&pageSize=50`], () =>
     FetchCriminals('@wanted', `page=${page}&pageSize=50`),
   );
 
   const pages = Math.ceil(total / 50);
 
-  const filters = useContext(FilterContext);
-  const filtersEntries = Object.entries(filters);
-
-  // let rewardAmount = text.match(/(?<=\$)[0-9]+|(?<=,)[0-9]+/g);
-
-  // rewardAmount = parseInt(rewardAmount.join(""))
-
-  // console.log(rewardAmount)
+  const context = useContext(FilterContext);
+  const filtersEntries = Object.entries(context.filters);
 
   const filteredData = items?.filter((item) =>
     filtersEntries
       .filter(
         ([filtersKey, filtersValue]) =>
-          (filtersValue !== null && filtersValue.length > 0) ||
-          filtersValue > 0,
+          filtersValue !== 'All' &&
+          ((filtersValue !== null && filtersValue.length > 0) ||
+            filtersValue > 0),
       )
       .every(([key, value]) => {
         if (Array.isArray(value)) {
@@ -59,13 +53,15 @@ export const CardList = ({ spacing }) => {
             return reward >= value[0] && reward <= value[1];
           } else {
             return value.some(
-              (val) => val.toLowerCase() === item[key].toLowerCase(),
+              (val) => val.toLowerCase() === item[key]?.toLowerCase(),
             );
           }
         } else if (key === 'weight') {
-          return item.weight_max >= value && value >= item.weight_min;
+          return (
+            item.weight_max >= parseInt(value) &&
+            parseInt(value) >= item.weight_min
+          );
         } else {
-          console.log(key);
           return item[key]?.toLowerCase().includes(value?.toLowerCase());
         }
       }),
@@ -86,7 +82,7 @@ export const CardList = ({ spacing }) => {
         />
       ))}
       <Loading isLoading={isLoading} />
-      {(isError || filteredData.length < 1) && (
+      {(isError || filteredData?.length < 1) && (
         <Grid
           item
           container

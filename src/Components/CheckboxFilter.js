@@ -8,8 +8,7 @@ import {
 
 import { variables } from '../assets/variables';
 
-export const CheckboxFilter = ({ label }) => {
-  const hairs = ['Dark', 'Brown', 'Blond'];
+export const CheckboxFilter = ({ label, options, onChange }) => {
   const { whiteColor, bgColor } = variables;
 
   return (
@@ -29,17 +28,17 @@ export const CheckboxFilter = ({ label }) => {
         {label}
       </FormLabel>
       <FormGroup row>
-        {hairs.map((hair) => {
+        {options?.map((option) => {
           return (
             <FormControlLabel
               control={
                 <Checkbox
-                  onChange={null}
+                  onChange={onChange}
                   sx={{ color: whiteColor }}
-                  name={hair.toLowerCase()}
+                  name={option.toLowerCase()}
                 />
               }
-              label={hair}
+              label={option}
               sx={{
                 color: whiteColor,
                 '& .MuiCheckbox-root.Mui-checked': {
