@@ -3,6 +3,7 @@ import { Grid, Pagination } from '@mui/material';
 import { useQuery } from 'react-query';
 
 import { FilterContext } from '../FilterContext';
+import { getMoneyNumberfromString } from '../utils/helpers';
 
 import { CriminalCard } from './CriminalCard';
 import { FetchCriminals } from './Fetch';
@@ -44,7 +45,7 @@ export const CardList = ({ spacing }) => {
           if (key === 'reward') {
             let reward =
               item?.reward_text !== null
-                ? item?.reward_text.match(/(?<=\$)[0-9]+|(?<=,)[0-9]+/g)
+                ? getMoneyNumberfromString(item?.reward_text)
                 : 0;
             reward = Array.isArray(reward) ? reward.join('') : 0;
             return parseInt(reward) >= value[0] && parseInt(reward) <= value[1];
