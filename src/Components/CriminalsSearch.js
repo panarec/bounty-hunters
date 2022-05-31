@@ -10,8 +10,6 @@ import { TextFieldFilter } from './TextFieldFilter';
 export const CriminalsSearch = () => {
   const context = useContext(FilterContext);
 
-  const { title, weight, nationality, eyes, reward, race } = context.filters;
-
   const nationalitiesOptions = [
     'All',
     'American',
@@ -34,7 +32,7 @@ export const CriminalsSearch = () => {
       <Filter>
         <TextFieldFilter
           label="Title"
-          value={title}
+          value={context.searchParams.get('title')}
           onChange={(e) => context.onTextfieldChange('title', e.target.value)}
         />
       </Filter>
@@ -42,7 +40,7 @@ export const CriminalsSearch = () => {
         <TextFieldFilter
           label="Weight"
           type="number"
-          value={weight}
+          value={context.searchParams.get('weight')}
           onChange={(e) => context.onTextfieldChange('weight', e.target.value)}
         ></TextFieldFilter>
       </Filter>
@@ -50,7 +48,7 @@ export const CriminalsSearch = () => {
         <TextFieldFilter
           label="Nationality"
           select
-          value={nationality}
+          value={context.searchParams.get('nationality')}
           onChange={(e) =>
             context.onTextfieldChange('nationality', e.target.value)
           }
@@ -61,9 +59,9 @@ export const CriminalsSearch = () => {
         <TextFieldFilter
           label="Eyes"
           select
-          value={eyes}
+          value={context.searchParams.get('eyes')}
           onChange={(e) => context.onTextfieldChange('eyes', e.target.value)}
-          option={eyesOptions}
+          options={eyesOptions}
         />
       </Filter>
       <Filter>
@@ -74,7 +72,7 @@ export const CriminalsSearch = () => {
           step={1000}
           min={0}
           max={100000}
-          value={reward}
+          value={context.searchParams.get('reward')}
           onChange={(e) => context.onTextfieldChange('reward', e.target.value)}
         />
       </Filter>
@@ -82,14 +80,14 @@ export const CriminalsSearch = () => {
         <CheckboxFilter
           label="Hair"
           options={hairOptions}
-          onChange={(e) => context.onCheckboxGroupChange("hair" ,e.target)}
+          onChange={(e) => context.onCheckboxGroupChange('hair', e.target)}
         />
       </Filter>
       <Filter>
         <TextFieldFilter
           label="Race"
           select
-          value={race}
+          value={context.searchParams.get('race')}
           onChange={(e) => context.onTextfieldChange('race', e.target.value)}
           options={raceOptions}
         />
@@ -98,7 +96,7 @@ export const CriminalsSearch = () => {
         <CheckboxFilter
           label="Sex"
           options={sexOptions}
-          onChange={(e) => context.onCheckboxGroupChange("sex" ,e.target)}
+          onChange={(e) => context.onCheckboxGroupChange('sex', e.target)}
         />
       </Filter>
     </>

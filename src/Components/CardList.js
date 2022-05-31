@@ -30,7 +30,7 @@ export const CardList = ({ spacing }) => {
   const pages = Math.ceil(total / 50);
 
   const context = useContext(FilterContext);
-  const filtersEntries = Object.entries(context.filters);
+  const filtersEntries = Object.entries(context.searchParams);
 
   const filteredData = items?.filter((item) =>
     filtersEntries

@@ -15,10 +15,17 @@ export const FilterContextProvider = ({ children }) => {
     sex: '',
   });
 
+  const [searchParams, setSearchParams] = useSearchParams({});
+
+  useEffect(() => {
+    setSearchParams(filters);
+  }, [filters, setSearchParams]);
 
   const onTextfieldChange = (name, value) => {
     setFilters({ ...filters, [name]: value });
-  }
+  };
+
+  console.log(searchParams);
 
   const onCheckboxGroupChange = (name, eventTarget) => {
     if (eventTarget.checked === true) {
@@ -29,13 +36,13 @@ export const FilterContextProvider = ({ children }) => {
         [name]: filters[name].filter((item) => item !== eventTarget.name),
       });
     }
-  }
-
+  };
 
   const value = {
     filters: filters,
+    searchParams: searchParams,
     onTextfieldChange: onTextfieldChange,
-    onCheckboxGroupChange: onCheckboxGroupChange
+    onCheckboxGroupChange: onCheckboxGroupChange,
   };
 
   return (
