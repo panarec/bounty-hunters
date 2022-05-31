@@ -35,6 +35,7 @@ export const CriminalCard = ({ criminalDetails, grid_columns }) => {
         sx={{
           margin: '0 auto',
           maxWidth: '17rem',
+          width: "100%",
           textAlign: 'center',
           backgroundImage: `url(${bgImage})`,
           display: 'flex',

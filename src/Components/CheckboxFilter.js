@@ -31,6 +31,7 @@ export const CheckboxFilter = ({ label, options, onChange }) => {
         {options?.map((option) => {
           return (
             <FormControlLabel
+              key={option}
               control={
                 <Checkbox
                   onChange={onChange}

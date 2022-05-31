@@ -42,15 +42,12 @@ export const CardList = ({ spacing }) => {
       .every(([key, value]) => {
         if (Array.isArray(value)) {
           if (key === 'reward') {
-            const reward =
-              item.reward_text !== null
-                ? parseInt(
-                    item.reward_text
-                      .match(/(?<=\$)[0-9]+|(?<=,)[0-9]+/g)
-                      .join(''),
-                  )
+            let reward =
+              item?.reward_text !== null
+                ? item?.reward_text.match(/(?<=\$)[0-9]+|(?<=,)[0-9]+/g)
                 : 0;
-            return reward >= value[0] && reward <= value[1];
+            reward = Array.isArray(reward) ? reward.join('') : 0;
+            return parseInt(reward) >= value[0] && parseInt(reward) <= value[1];
           } else {
             return value.some(
               (val) => val.toLowerCase() === item[key]?.toLowerCase(),
