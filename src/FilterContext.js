@@ -1,4 +1,5 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export const FilterContext = createContext();
 
@@ -14,56 +15,27 @@ export const FilterContextProvider = ({ children }) => {
     sex: '',
   });
 
-  const onTitleChange = (title) => {
-    setFilters({ ...filters, title: title });
-  };
-  const onWeightChange = (weight) => {
-    setFilters({ ...filters, weight: weight });
-  };
-  const onNationalityChange = (nationality) => {
-    setFilters({ ...filters, nationality: nationality });
-  };
-  const onEyesChange = (eyes) => {
-    setFilters({ ...filters, eyes: eyes });
-  };
-  const onRewardChange = (reward) => {
-    setFilters({ ...filters, reward: reward });
-  };
-  const onHairChange = (target) => {
-    if (target.checked === true) {
-      setFilters({ ...filters, hair: [...filters.hair, target.name] });
-    } else {
-      setFilters({
-        ...filters,
-        hair: filters.hair.filter((item) => item !== target.name),
-      });
-    }
-  };
-  const onRaceChange = (race) => {
-    setFilters({ ...filters, race: race });
-  };
 
-  const onSexChange = (target) => {
-    if (target.checked === true) {
-      setFilters({ ...filters, sex: [...filters.sex, target.name] });
+  const onTextfieldChange = (name, value) => {
+    setFilters({ ...filters, [name]: value });
+  }
+
+  const onCheckboxGroupChange = (name, eventTarget) => {
+    if (eventTarget.checked === true) {
+      setFilters({ ...filters, [name]: [...filters[name], eventTarget.name] });
     } else {
       setFilters({
         ...filters,
-        sex: filters.sex.filter((item) => item !== target.name),
+        [name]: filters[name].filter((item) => item !== eventTarget.name),
       });
     }
-  };
+  }
+
 
   const value = {
     filters: filters,
-    onTitleChange: onTitleChange,
-    onWeightChange: onWeightChange,
-    onNationalityChange: onNationalityChange,
-    onEyesChange: onEyesChange,
-    onRewardChange: onRewardChange,
-    onHairChange: onHairChange,
-    onRaceChange: onRaceChange,
-    onSexChange: onSexChange,
+    onTextfieldChange: onTextfieldChange,
+    onCheckboxGroupChange: onCheckboxGroupChange
   };
 
   return (

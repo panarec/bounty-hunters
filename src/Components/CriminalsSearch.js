@@ -33,9 +33,9 @@ export const CriminalsSearch = () => {
     <>
       <Filter>
         <TextFieldFilter
-          label="Name"
+          label="Title"
           value={title}
-          onChange={(e) => context.onTitleChange(e.target.value)}
+          onChange={(e) => context.onTextfieldChange('title', e.target.value)}
         />
       </Filter>
       <Filter>
@@ -43,7 +43,7 @@ export const CriminalsSearch = () => {
           label="Weight"
           type="number"
           value={weight}
-          onChange={(e) => context.onWeightChange(e.target.value)}
+          onChange={(e) => context.onTextfieldChange('weight', e.target.value)}
         ></TextFieldFilter>
       </Filter>
       <Filter>
@@ -51,7 +51,9 @@ export const CriminalsSearch = () => {
           label="Nationality"
           select
           value={nationality}
-          onChange={(e) => context.onNationalityChange(e.target.value)}
+          onChange={(e) =>
+            context.onTextfieldChange('nationality', e.target.value)
+          }
           options={nationalitiesOptions}
         />
       </Filter>
@@ -60,7 +62,7 @@ export const CriminalsSearch = () => {
           label="Eyes"
           select
           value={eyes}
-          onChange={(e) => context.onEyesChange(e.target.value)}
+          onChange={(e) => context.onTextfieldChange('eyes', e.target.value)}
           option={eyesOptions}
         />
       </Filter>
@@ -73,14 +75,14 @@ export const CriminalsSearch = () => {
           min={0}
           max={100000}
           value={reward}
-          onChange={(e) => context.onRewardChange(e.target.value)}
+          onChange={(e) => context.onTextfieldChange('reward', e.target.value)}
         />
       </Filter>
       <Filter>
         <CheckboxFilter
           label="Hair"
           options={hairOptions}
-          onChange={(e) => context.onHairChange(e.target)}
+          onChange={(e) => context.onCheckboxGroupChange("hair" ,e.target)}
         />
       </Filter>
       <Filter>
@@ -88,7 +90,7 @@ export const CriminalsSearch = () => {
           label="Race"
           select
           value={race}
-          onChange={(e) => context.onRaceChange(e.target.value)}
+          onChange={(e) => context.onTextfieldChange('race', e.target.value)}
           options={raceOptions}
         />
       </Filter>
@@ -96,7 +98,7 @@ export const CriminalsSearch = () => {
         <CheckboxFilter
           label="Sex"
           options={sexOptions}
-          onChange={(e) => context.onSexChange(e.target)}
+          onChange={(e) => context.onCheckboxGroupChange("sex" ,e.target)}
         />
       </Filter>
     </>
