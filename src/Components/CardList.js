@@ -30,11 +30,8 @@ export const CardList = ({ spacing }) => {
   const pages = Math.ceil(total / 50);
 
   const context = useContext(FilterContext);
-  const filtersEntries = Object.entries(
-    Object.fromEntries([...context.searchParams]),
-  );
-
-  const filteredData = items?.filter((item) =>
+  const filtersEntries = [...context.searchParams];
+  const filteredData = items?.filter((criminal) =>
     filtersEntries
       .filter(
         ([filtersKey, filtersValue]) =>
@@ -43,27 +40,36 @@ export const CardList = ({ spacing }) => {
             filtersValue.length > 0) ||
           filtersValue > 0,
       )
-      .every(([key, value]) => {
-        if (Array.isArray(value)) {
-          if (key === 'reward') {
-            let reward =
-              item?.reward_text !== null
-                ? getMoneyNumberfromString(item?.reward_text)
-                : 0;
-            reward = Array.isArray(reward) ? reward.join('') : 0;
-            return parseInt(reward) >= value[0] && parseInt(reward) <= value[1];
-          } else {
-            return value.some(
-              (val) => val.toLowerCase() === item[key]?.toLowerCase(),
-            );
-          }
-        } else if (key === 'weight') {
+      .every(([criminalProperty, criminalPropertyValue]) => {
+        if (criminalProperty === 'hair' || criminalProperty === 'sex') {
+          const hairs = criminalPropertyValue.split(',');
+          return hairs.some(
+            (hair) =>
+              hair.toLowerCase() === criminal[criminalProperty]?.toLowerCase(),
+          )
+        } else if (criminalProperty === 'weight') {
           return (
-            item.weight_max >= parseInt(value) &&
-            parseInt(value) >= item.weight_min
+            criminal.weight_max >= parseInt(criminalPropertyValue) &&
+            parseInt(criminalPropertyValue) >= criminal.weight_min
           );
+        } else if (criminalProperty === 'min_reward') {
+          let reward =
+            criminal?.reward_text !== null
+              ? getMoneyNumberfromString(criminal?.reward_text)
+              : 0;
+          reward = Array.isArray(reward) ? reward.join('') : 0;
+          return parseInt(reward) >= criminalPropertyValue;
+        } else if (criminalProperty === 'max_reward') {
+          let reward =
+            criminal?.reward_text !== null
+              ? getMoneyNumberfromString(criminal?.reward_text)
+              : 0;
+          reward = Array.isArray(reward) ? reward.join('') : 0;
+          return parseInt(reward) <= criminalPropertyValue;
         } else {
-          return item[key]?.toLowerCase().includes(value?.toLowerCase());
+          return criminal[criminalProperty]
+            ?.toLowerCase()
+            .includes(criminalPropertyValue?.toLowerCase());
         }
       }),
   );

@@ -10,7 +10,8 @@ import { TextFieldFilter } from './TextFieldFilter';
 export const CriminalsSearch = () => {
   const context = useContext(FilterContext);
 
-  const { title, weight, nationality, eyes, reward, race } = context.filters;
+  const { title, weight, nationality, eyes, min_reward, max_reward, race } =
+    context.filters;
 
   const nationalitiesOptions = [
     'All',
@@ -74,8 +75,8 @@ export const CriminalsSearch = () => {
           step={1000}
           min={0}
           max={100000}
-          value={reward}
-          onChange={(e) => context.onTextfieldChange('reward', e.target.value)}
+          value={[min_reward, max_reward] || [0, 100000]}
+          onChange={(e) => context.onSliderChange('reward', e.target.value)}
         />
       </Filter>
       <Filter>

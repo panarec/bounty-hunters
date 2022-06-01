@@ -10,7 +10,7 @@ export const FilterContextProvider = ({ children }) => {
     nationality: null,
     eyes: null,
     reward: null,
-    hair: null,
+    hair: [],
     race: null,
     sex: '',
   });
@@ -21,35 +21,60 @@ export const FilterContextProvider = ({ children }) => {
     if (searchParams) {
       setFilters(Object.fromEntries([...searchParams]));
     }
-  }, []);
+    console.log([...searchParams].find((item) => item[0] === 'hair'));
+  }, [searchParams]);
 
   const onSubmit = (event) => {
     event.preventDefault();
+    const newFilters = filters && Object.entries(filters).filter(([key,value]) => value.length > 0)
+    const queryString = new URLSearchParams(newFilters).toString();
+    setSearchParams(queryString);
+  };
+  console.log({ filters });
 
-    setSearchParams(filters);
+  const onTextfieldChange = (textfieldName, texfieldValue) => {
+    setFilters({ ...filters, [textfieldName]: texfieldValue });
   };
 
-  const onTextfieldChange = (name, value) => {
-    setFilters({ ...filters, [name]: value });
+  const onSliderChange = (sliderName, sliderValue) => {
+    setFilters({
+      ...filters,
+      ['min_' + sliderName]: sliderValue[0],
+      ['max_' + sliderName]: sliderValue[1],
+    });
   };
 
-  const onCheckboxGroupChange = (name, eventTarget) => {
+  const onCheckboxGroupChange = (checkboxName, eventTarget) => {
     if (eventTarget.checked === true) {
-      setFilters({ ...filters, [name]: [...filters[name], eventTarget.name] });
+      if (filters[checkboxName]?.length) {
+        setFilters({
+          ...filters,
+          [checkboxName]: filters[checkboxName] + "," + eventTarget.name,
+        });
+      } else {
+        setFilters({
+          ...filters,
+          [checkboxName]: eventTarget.name,
+        });
+      }
     } else {
       setFilters({
         ...filters,
-        [name]: filters[name].filter((item) => item !== eventTarget.name),
+        [checkboxName]: filters[checkboxName]
+          .split(',')
+          .filter((item) => item !== eventTarget.name).join(","),
       });
+      console.log(filters);
     }
   };
-
+  console.log(filters);
   const value = {
     filters: filters,
     searchParams: searchParams,
     onTextfieldChange: onTextfieldChange,
     onCheckboxGroupChange: onCheckboxGroupChange,
     onSubmit: onSubmit,
+    onSliderChange: onSliderChange,
   };
 
   return (
