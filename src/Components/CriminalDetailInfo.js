@@ -1,10 +1,12 @@
+// eslint-disable-next-line simple-import-sort/imports
 import React from 'react';
+import { BookingControls } from './BookingControls';
+
 import { Button, Grid, Typography } from '@mui/material';
 
 import { variables } from '../assets/variables';
 import { getMoneyStringfromString } from '../utils/helpers';
 
-import { BookingControls } from './BookingControls';
 
 export const CriminalDetailInfo = ({ data }) => {
   const { smokumFont, ryeFont, greenColor, redColor } = variables;

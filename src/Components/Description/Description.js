@@ -29,6 +29,8 @@ export const Description = ({ data }) => {
     'coordinates',
   ];
 
+  console.log();
+
   return (
     <Grid
       container
@@ -63,12 +65,12 @@ export const Description = ({ data }) => {
       </Typography>
       <ul className="details-list">
         {Object.entries(data).map(
-          (entry) =>
-            !excludedData.includes(entry[0]) &&
-            entry[1] !== null && (
+          ([dataKey, dataValue]) =>
+            excludedData.some((item) => item !== dataKey) &&
+            dataValue !== null && (
               <Typography variant="subtitle1" component="li" py={1}>
-                <strong>{formatDetailsKey(entry[0])}:</strong>{' '}
-                {Array.isArray(entry[1]) ? entry[1].join(', ') : entry[1]}
+                <strong>{formatDetailsKey(dataKey)}:</strong>{' '}
+                {Array.isArray(dataValue) ? dataValue.join(', ') : dataValue}
               </Typography>
             ),
         )}

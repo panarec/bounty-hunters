@@ -3,26 +3,34 @@ import { Button, Typography } from '@mui/material';
 
 import { variables } from '../assets/variables';
 
+const STATES = {
+  free: "free",
+  reserved: 'reserved',
+  eliminated: 'eliminated',
+};
+
 export const BookingControls = () => {
-  const [criminalState, setCriminalState] = useState('free');
+  const { free, reserved, eliminated } = STATES;
+
+  const [criminalState, setCriminalState] = useState(free);
 
   const { redColor, redColorHovered, ryeFont } = variables;
 
   const handleBookClick = (e) => {
-    if (criminalState === 'free') {
-      setCriminalState('reserved');
-    } else if (criminalState === 'reserved') {
-      setCriminalState('eliminated');
+    if (criminalState === free) {
+      setCriminalState(reserved);
+    } else if (criminalState === reserved) {
+      setCriminalState(eliminated);
     }
   };
 
   const handleUnbookClick = (e) => {
-    setCriminalState('free');
+    setCriminalState(free);
   };
 
   return (
     <div>
-      {criminalState !== 'eliminated' && (
+      {criminalState !== eliminated && (
         <Button
           variant="contained"
           size="large"
@@ -35,10 +43,10 @@ export const BookingControls = () => {
             },
           }}
         >
-          {criminalState === 'free' ? 'BOOK' : 'ELIMINATE'}
+          {criminalState === free ? 'BOOK' : 'ELIMINATE'}
         </Button>
       )}
-      {criminalState === 'reserved' && (
+      {criminalState === reserved && (
         <Button
           variant="outlined"
           size="large"
@@ -57,7 +65,7 @@ export const BookingControls = () => {
           UNBOOK
         </Button>
       )}
-      {criminalState === 'eliminated' && (
+      {criminalState === eliminated && (
         <Typography
           variant="h4"
           component="div"

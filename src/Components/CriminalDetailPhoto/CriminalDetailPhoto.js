@@ -8,7 +8,7 @@ export const CriminalDetailPhoto = ({ data }) => {
   return (
     <img
       src={(images.length && images[0].original) || placeHolder}
-      onError={(e) => (e.target.src = placeHolder)}
+      onError={(error) => (error.target.src = placeHolder)}
       alt="criminal-face"
       className="criminal-photo"
     />
