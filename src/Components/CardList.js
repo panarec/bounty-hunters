@@ -30,49 +30,55 @@ export const CardList = ({ spacing }) => {
   const pages = Math.ceil(total / 50);
 
   const context = useContext(FilterContext);
+
   const filtersEntries = [...context.searchParams];
-  const filteredData = items?.filter((criminal) =>
-    filtersEntries
-      .filter(
-        ([filtersKey, filtersValue]) =>
-          (filtersValue !== 'All' &&
-            filtersValue !== null &&
-            filtersValue.length > 0) ||
-          filtersValue > 0,
-      )
-      .every(([criminalProperty, criminalPropertyValue]) => {
-        if (criminalProperty === 'hair' || criminalProperty === 'sex') {
-          const hairs = criminalPropertyValue.split(',');
-          return hairs.some(
-            (hair) =>
-              hair.toLowerCase() === criminal[criminalProperty]?.toLowerCase(),
-          )
-        } else if (criminalProperty === 'weight') {
-          return (
-            criminal.weight_max >= parseInt(criminalPropertyValue) &&
-            parseInt(criminalPropertyValue) >= criminal.weight_min
+
+  const getValidFilters = () => {
+    return filtersEntries.filter(
+      ([filtersKey, filtersValue]) =>
+        (filtersValue !== 'All' &&
+          filtersValue !== null &&
+          filtersValue.length > 0) ||
+        filtersValue > 0,
+    );
+  };
+
+  const getCriminalReward = (criminal) => {
+    let reward =
+      criminal?.reward_text !== null
+        ? getMoneyNumberfromString(criminal?.reward_text)
+        : 0;
+    reward = Array.isArray(reward) ? reward.join('') : 0;
+    return parseInt(reward);
+  };
+
+  const getFilteredData = () => {
+    return items?.filter((criminal) =>
+      getValidFilters().every(([filterKey, filterValue]) => {
+        if (filterKey === 'hair' || filterKey === 'sex') {
+          const valueItems = filterValue.split(',');
+          return valueItems.some(
+            (item) => item.toLowerCase() === criminal[filterKey]?.toLowerCase(),
           );
-        } else if (criminalProperty === 'min_reward') {
-          let reward =
-            criminal?.reward_text !== null
-              ? getMoneyNumberfromString(criminal?.reward_text)
-              : 0;
-          reward = Array.isArray(reward) ? reward.join('') : 0;
-          return parseInt(reward) >= criminalPropertyValue;
-        } else if (criminalProperty === 'max_reward') {
-          let reward =
-            criminal?.reward_text !== null
-              ? getMoneyNumberfromString(criminal?.reward_text)
-              : 0;
-          reward = Array.isArray(reward) ? reward.join('') : 0;
-          return parseInt(reward) <= criminalPropertyValue;
+        } else if (filterKey === 'weight') {
+          return (
+            criminal.weight_max >= parseInt(filterValue) &&
+            parseInt(filterValue) >= criminal.weight_min
+          );
+        } else if (filterKey === 'min_reward') {
+          return getCriminalReward(criminal) >= filterValue;
+        } else if (filterKey === 'max_reward') {
+          return getCriminalReward(criminal) <= filterValue;
         } else {
-          return criminal[criminalProperty]
+          return criminal[filterKey]
             ?.toLowerCase()
-            .includes(criminalPropertyValue?.toLowerCase());
+            .includes(filterValue?.toLowerCase());
         }
       }),
-  );
+    );
+  };
+
+  const filteredData = getFilteredData();
 
   return (
     <Grid

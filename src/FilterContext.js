@@ -23,7 +23,6 @@ export const FilterContextProvider = ({ children }) => {
     if (searchParams) {
       setFilters(Object.fromEntries([...searchParams]));
     }
-    console.log([...searchParams].find((item) => item[0] === 'hair'));
   }, [searchParams]);
 
   const onSubmit = (event) => {
@@ -31,7 +30,6 @@ export const FilterContextProvider = ({ children }) => {
     const queryString = new URLSearchParams(filters).toString();
     setSearchParams(queryString);
   };
-  console.log({ filters });
 
   const onTextfieldChange = (textfieldName, texfieldValue) => {
     setFilters({ ...filters, [textfieldName]: texfieldValue });
@@ -66,10 +64,9 @@ export const FilterContextProvider = ({ children }) => {
           .filter((item) => item !== eventTarget.name)
           .join(','),
       });
-      console.log(filters);
     }
   };
-  console.log(filters);
+
   const value = {
     filters: filters,
     searchParams: searchParams,

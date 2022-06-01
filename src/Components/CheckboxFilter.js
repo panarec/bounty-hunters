@@ -14,12 +14,12 @@ export const CheckboxFilter = ({ label, options, onChange }) => {
   const { whiteColor, bgColor } = variables;
   const context = useContext(FilterContext);
 
-  const isChecked = (option) => { 
-    const propertyKey = context.filters[label.toLowerCase()] || ""
-    const values = propertyKey.toString().split(',')
+  const isChecked = (option) => {
+    const propertyKey = context.filters[label.toLowerCase()] || '';
+    const values = propertyKey.toString().split(',');
     const checked = values.some((value) => value === option.toLowerCase());
-    return checked
-  }
+    return checked;
+  };
 
   return (
     <FormControl
