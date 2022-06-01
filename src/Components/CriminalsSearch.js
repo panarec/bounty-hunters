@@ -82,7 +82,7 @@ export const CriminalsSearch = () => {
         <CheckboxFilter
           label="Hair"
           options={hairOptions}
-          onChange={(e) => context.onCheckboxGroupChange("hair" ,e.target)}
+          onChange={(e) => context.onCheckboxGroupChange('hair', e.target)}
         />
       </Filter>
       <Filter>
@@ -98,7 +98,7 @@ export const CriminalsSearch = () => {
         <CheckboxFilter
           label="Sex"
           options={sexOptions}
-          onChange={(e) => context.onCheckboxGroupChange("sex" ,e.target)}
+          onChange={(e) => context.onCheckboxGroupChange('sex', e.target)}
         />
       </Filter>
     </>

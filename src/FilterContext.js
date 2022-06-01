@@ -5,20 +5,33 @@ export const FilterContext = createContext();
 
 export const FilterContextProvider = ({ children }) => {
   const [filters, setFilters] = useState({
-    title: '',
-    weight: '',
-    nationality: 'All',
-    eyes: 'All',
-    reward: [0, 100000],
-    hair: [],
-    race: 'All',
+    title: null,
+    weight: null,
+    nationality: null,
+    eyes: null,
+    reward: null,
+    hair: null,
+    race: null,
     sex: '',
   });
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams) {
+      setFilters(Object.fromEntries([...searchParams]));
+    }
+  }, []);
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    setSearchParams(filters);
+  };
 
   const onTextfieldChange = (name, value) => {
     setFilters({ ...filters, [name]: value });
-  }
+  };
 
   const onCheckboxGroupChange = (name, eventTarget) => {
     if (eventTarget.checked === true) {
@@ -29,13 +42,14 @@ export const FilterContextProvider = ({ children }) => {
         [name]: filters[name].filter((item) => item !== eventTarget.name),
       });
     }
-  }
-
+  };
 
   const value = {
     filters: filters,
+    searchParams: searchParams,
     onTextfieldChange: onTextfieldChange,
-    onCheckboxGroupChange: onCheckboxGroupChange
+    onCheckboxGroupChange: onCheckboxGroupChange,
+    onSubmit: onSubmit,
   };
 
   return (

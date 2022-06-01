@@ -30,15 +30,18 @@ export const CardList = ({ spacing }) => {
   const pages = Math.ceil(total / 50);
 
   const context = useContext(FilterContext);
-  const filtersEntries = Object.entries(context.filters);
+  const filtersEntries = Object.entries(
+    Object.fromEntries([...context.searchParams]),
+  );
 
   const filteredData = items?.filter((item) =>
     filtersEntries
       .filter(
         ([filtersKey, filtersValue]) =>
-          filtersValue !== 'All' &&
-          ((filtersValue !== null && filtersValue.length > 0) ||
-            filtersValue > 0),
+          (filtersValue !== 'All' &&
+            filtersValue !== null &&
+            filtersValue.length > 0) ||
+          filtersValue > 0,
       )
       .every(([key, value]) => {
         if (Array.isArray(value)) {
