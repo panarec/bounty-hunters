@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
+import { FiltersForm } from './Components/FiltersForm';
+
 export const FilterContext = createContext();
 
 export const FilterContextProvider = ({ children }) => {
@@ -26,8 +28,7 @@ export const FilterContextProvider = ({ children }) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const newFilters = filters && Object.entries(filters).filter(([key,value]) => value.length > 0)
-    const queryString = new URLSearchParams(newFilters).toString();
+    const queryString = new URLSearchParams(filters).toString();
     setSearchParams(queryString);
   };
   console.log({ filters });
@@ -49,7 +50,7 @@ export const FilterContextProvider = ({ children }) => {
       if (filters[checkboxName]?.length) {
         setFilters({
           ...filters,
-          [checkboxName]: filters[checkboxName] + "," + eventTarget.name,
+          [checkboxName]: filters[checkboxName] + ',' + eventTarget.name,
         });
       } else {
         setFilters({
@@ -62,7 +63,8 @@ export const FilterContextProvider = ({ children }) => {
         ...filters,
         [checkboxName]: filters[checkboxName]
           .split(',')
-          .filter((item) => item !== eventTarget.name).join(","),
+          .filter((item) => item !== eventTarget.name)
+          .join(','),
       });
       console.log(filters);
     }
