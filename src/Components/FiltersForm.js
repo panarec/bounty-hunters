@@ -1,9 +1,18 @@
 import { useContext } from 'react';
+<<<<<<< HEAD
 
 import { FilterContext } from '../FilterContext';
 
 import { variables } from './../assets/variables';
 
+=======
+
+import { FilterContext } from '../FilterContext';
+
+import { variables } from './../assets/variables';
+import { whiteOutlinedButton } from './CustomMUI';
+
+>>>>>>> 89507d34e1688ff7a41ad5fd39bebf22e4c993db
 const { Grid, Typography, Button } = require('@mui/material');
 
 export const FiltersForm = ({ heading, children }) => {
@@ -35,11 +44,19 @@ export const FiltersForm = ({ heading, children }) => {
       <Grid
         item
         container
+<<<<<<< HEAD
         rowGap={5}
         columnSpacing={3}
         justifyContent="center"
         component="form"
         onSubmit={(event) => context.onSubmit(event)}
+=======
+        rowGap={4}
+        columnSpacing={3}
+        justifyContent="center"
+        component="form"
+        onSubmit={(e) => context.onSubmitForm(e)}
+>>>>>>> 89507d34e1688ff7a41ad5fd39bebf22e4c993db
       >
         {children}
         <Grid item container sm={12} justifyContent="center">
