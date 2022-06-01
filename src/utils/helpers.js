@@ -6,3 +6,7 @@ export const formatDetailsKey = (key) => {
     formatedKey.substring(1, formatedKey.lenght);
   return formatedKey;
 };
+
+export const getMoneyStringfromString = (string) => {
+  return string?.match(/\$(\d,*)*/g);
+};

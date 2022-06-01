@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Grid, Typography } from '@mui/material';
 
 import { variables } from '../assets/variables';
+import { getMoneyStringfromString } from '../utils/helpers';
 
 import { BookingControls } from './BookingControls';
 
@@ -34,7 +35,7 @@ export const CriminalDetailInfo = ({ data }) => {
           marginBlock: '3rem',
         }}
       >
-        $10 000
+        {getMoneyStringfromString(reward_text)}
       </Typography>
       <BookingControls />
       <Button
