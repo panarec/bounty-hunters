@@ -29,7 +29,10 @@ export const Description = ({ data }) => {
     'coordinates',
   ];
 
-  console.log();
+  const dataToDisplay = Object.entries(data).filter(
+    ([key, value]) =>
+      !excludedData.some((item) => item === key) && value !== null,
+  );
 
   return (
     <Grid
@@ -64,16 +67,12 @@ export const Description = ({ data }) => {
         {DETAILS}
       </Typography>
       <ul className="details-list">
-        {Object.entries(data).map(
-          ([dataKey, dataValue]) =>
-            excludedData.some((item) => item !== dataKey) &&
-            dataValue !== null && (
-              <Typography variant="subtitle1" component="li" py={1}>
-                <strong>{formatDetailsKey(dataKey)}:</strong>{' '}
-                {Array.isArray(dataValue) ? dataValue.join(', ') : dataValue}
-              </Typography>
-            ),
-        )}
+        {dataToDisplay.map(([dataKey, dataValue]) => (
+          <Typography variant="subtitle1" component="li" py={1}>
+            <strong>{formatDetailsKey(dataKey)}:</strong>{' '}
+            {Array.isArray(dataValue) ? dataValue.join(', ') : dataValue}
+          </Typography>
+        ))}
       </ul>
     </Grid>
   );

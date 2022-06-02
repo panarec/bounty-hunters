@@ -13,7 +13,6 @@ import { NotFoundPage } from './NotFoundPage';
 export const CriminalDetailPage = () => {
   const { slug } = useParams();
 
-  console.log(slug);
   const { isLoading, isError, data } = useQuery(['@wanted-person', slug], () =>
     fetchCriminal('@wanted-person', `${slug}`),
   );
