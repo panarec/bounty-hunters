@@ -7,28 +7,27 @@ import { Filter } from './Filter';
 import { SliderFilter } from './SliderFilter';
 import { TextFieldFilter } from './TextFieldFilter';
 
+const nationalitiesOptions = [
+  'All',
+  'American',
+  'Mexican',
+  'Russian',
+  'Ukrainian',
+  'Egyptian',
+];
+
+const eyesOptions = ['All', 'Green', 'Brown', 'Blue'];
+
+const hairOptions = ['Brown', 'Dark', 'Blond', 'Gray'];
+
+const raceOptions = ['All', 'White', 'Hispanic', 'Native', 'Asian', 'Black'];
+
+const sexOptions = ['Male', 'Female'];
+
 export const CriminalsSearch = () => {
   const context = useContext(FilterContext);
-
   const { title, weight, nationality, eyes, min_reward, max_reward, race } =
     context.filters;
-
-  const nationalitiesOptions = [
-    'All',
-    'American',
-    'Mexican',
-    'Russian',
-    'Ukrainian',
-    'Egyptian',
-  ];
-
-  const eyesOptions = ['All', 'Green', 'Brown', 'Blue'];
-
-  const hairOptions = ['Brown', 'Dark', 'Blond', 'Gray'];
-
-  const raceOptions = ['All', 'White', 'Hispanic', 'Native', 'Asian', 'Black'];
-
-  const sexOptions = ['Male', 'Female'];
 
   return (
     <>

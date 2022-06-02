@@ -1,16 +1,14 @@
-import { useContext } from 'react';
-
-import { FilterContext } from '../FilterContext';
+import { useFilterContext } from '../utils/useFilterContext';
 
 import { variables } from './../assets/variables';
 
-import "./_shared.scss"
+import './_shared.scss';
 
 const { Grid, Typography, Button } = require('@mui/material');
 
 export const FiltersForm = ({ heading, children }) => {
   const { redColor, whiteColor } = variables;
-  const context = useContext(FilterContext);
+  const context = useFilterContext();
 
   return (
     <Grid
@@ -41,7 +39,7 @@ export const FiltersForm = ({ heading, children }) => {
         columnSpacing={3}
         justifyContent="center"
         component="form"
-        onSubmit={(event) => context.onSubmit(event)}
+        onSubmit={context.onSubmit}
       >
         {children}
         <Grid item container sm={12} justifyContent="center">

@@ -1,23 +1,23 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { Grid, Pagination } from '@mui/material';
 import { useQuery } from 'react-query';
 
-import { FilterContext } from '../FilterContext';
 import { getMoneyNumberfromString } from '../utils/helpers';
+import { useFilterContext } from '../utils/useFilterContext';
 
 import { CriminalCard } from './CriminalCard';
 import { fetchCriminals } from './Fetch';
 import { Loading } from './Loading';
 
+const gridColumns = {
+  xl: 3,
+  lg: 4,
+  md: 6,
+  sm: 12,
+};
+
 export const CardList = ({ spacing }) => {
   const [page, setPage] = useState(1);
-
-  const grid_columns = {
-    xl: 3,
-    lg: 4,
-    md: 6,
-    sm: 12,
-  };
 
   const {
     isLoading,
@@ -29,7 +29,7 @@ export const CardList = ({ spacing }) => {
 
   const pages = Math.ceil(total / 50);
 
-  const context = useContext(FilterContext);
+  const context = useFilterContext();
 
   const filtersEntries = [...context.searchParams];
 
@@ -60,20 +60,22 @@ export const CardList = ({ spacing }) => {
           return valueItems.some(
             (item) => item.toLowerCase() === criminal[filterKey]?.toLowerCase(),
           );
-        } else if (filterKey === 'weight') {
+        }
+        if (filterKey === 'weight') {
           return (
             criminal.weight_max >= parseInt(filterValue) &&
             parseInt(filterValue) >= criminal.weight_min
           );
-        } else if (filterKey === 'min_reward') {
-          return getCriminalReward(criminal) >= filterValue;
-        } else if (filterKey === 'max_reward') {
-          return getCriminalReward(criminal) <= filterValue;
-        } else {
-          return criminal[filterKey]
-            ?.toLowerCase()
-            .includes(filterValue?.toLowerCase());
         }
+        if (filterKey === 'min_reward') {
+          return getCriminalReward(criminal) >= filterValue;
+        }
+        if (filterKey === 'max_reward') {
+          return getCriminalReward(criminal) <= filterValue;
+        }
+        return criminal[filterKey]
+          ?.toLowerCase()
+          .includes(filterValue?.toLowerCase());
       }),
     );
   };
@@ -90,7 +92,7 @@ export const CardList = ({ spacing }) => {
       {filteredData?.map((criminal) => (
         <CriminalCard
           key={criminal.uid}
-          grid_columns={grid_columns}
+          grid_columns={gridColumns}
           criminalDetails={criminal}
         />
       ))}

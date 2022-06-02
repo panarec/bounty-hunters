@@ -10,10 +10,7 @@ export const formatDetailsKey = (key) => {
 export const getMoneyStringfromString = (string) => {
   return string?.match(/\$(\d,*)*/g);
 };
-<<<<<<< HEAD
 
 export const getMoneyNumberfromString = (string) => {
   return string?.match(/(?<=\$)[0-9]+|(?<=,)[0-9]+/g);
 }
-=======
->>>>>>> main

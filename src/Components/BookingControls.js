@@ -10,17 +10,15 @@ const STATES = {
 };
 
 export const BookingControls = () => {
-
   const [criminalState, setCriminalState] = useState(STATES.free);
 
   const { redColor, redColorHovered, ryeFont } = variables;
 
   const handleBookClick = (e) => {
     if (criminalState === STATES.free) {
-      setCriminalState(STATES.reserved);
-    } else if (criminalState === STATES.reserved) {
-      setCriminalState(STATES.eliminated);
+      return setCriminalState(STATES.reserved);
     }
+    return setCriminalState(STATES.eliminated);
   };
 
   const handleUnbookClick = (e) => {

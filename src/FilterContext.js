@@ -6,16 +6,7 @@ import { FiltersForm } from './Components/FiltersForm';
 export const FilterContext = createContext();
 
 export const FilterContextProvider = ({ children }) => {
-  const [filters, setFilters] = useState({
-    title: null,
-    weight: null,
-    nationality: null,
-    eyes: null,
-    reward: null,
-    hair: [],
-    race: null,
-    sex: '',
-  });
+  const [filters, setFilters] = useState({});
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -46,25 +37,23 @@ export const FilterContextProvider = ({ children }) => {
   const onCheckboxGroupChange = (checkboxName, eventTarget) => {
     if (eventTarget.checked === true) {
       if (filters[checkboxName]?.length) {
-        setFilters({
+        return setFilters({
           ...filters,
           [checkboxName]: filters[checkboxName] + ',' + eventTarget.name,
         });
-      } else {
-        setFilters({
-          ...filters,
-          [checkboxName]: eventTarget.name,
-        });
       }
-    } else {
-      setFilters({
+      return setFilters({
         ...filters,
-        [checkboxName]: filters[checkboxName]
-          .split(',')
-          .filter((item) => item !== eventTarget.name)
-          .join(','),
+        [checkboxName]: eventTarget.name,
       });
     }
+    return setFilters({
+      ...filters,
+      [checkboxName]: filters[checkboxName]
+        .split(',')
+        .filter((item) => item !== eventTarget.name)
+        .join(','),
+    });
   };
 
   const value = {
