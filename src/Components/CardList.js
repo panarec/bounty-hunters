@@ -6,7 +6,7 @@ import { FilterContext } from '../FilterContext';
 import { getMoneyNumberfromString } from '../utils/helpers';
 
 import { CriminalCard } from './CriminalCard';
-import { FetchCriminals } from './Fetch';
+import { fetchCriminals } from './Fetch';
 import { Loading } from './Loading';
 
 export const CardList = ({ spacing }) => {
@@ -24,7 +24,7 @@ export const CardList = ({ spacing }) => {
     isError,
     data: { total, items } = {},
   } = useQuery([page, '@wanted', `page=${page}&pageSize=50`], () =>
-    FetchCriminals('@wanted', `page=${page}&pageSize=50`),
+    fetchCriminals('@wanted', `page=${page}&pageSize=50`),
   );
 
   const pages = Math.ceil(total / 50);
@@ -94,8 +94,8 @@ export const CardList = ({ spacing }) => {
           criminalDetails={criminal}
         />
       ))}
-      <Loading isLoading={isLoading} />
-      {(isError || filteredData?.length < 1) && (
+      {isLoading && <Loading />}
+      {isError && (
         <Grid
           item
           container

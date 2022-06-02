@@ -1,4 +1,5 @@
 import { Grid, Typography } from '@mui/material';
+import parse from 'html-react-parser';
 
 import { variables } from '../../assets/variables';
 import { formatDetailsKey } from '../../utils/helpers';
@@ -29,6 +30,11 @@ export const Description = ({ data }) => {
     'coordinates',
   ];
 
+  const dataToDisplay = Object.entries(data).filter(
+    ([key, value]) =>
+      !excludedData.some((item) => item === key) && value !== null,
+  );
+
   return (
     <Grid
       container
@@ -50,7 +56,7 @@ export const Description = ({ data }) => {
             {DESCRIPTION}
           </Typography>
           <Typography variant="subtitle1" component="div">
-            {caution}
+            {parse(caution)}
           </Typography>
         </>
       )}
@@ -62,16 +68,12 @@ export const Description = ({ data }) => {
         {DETAILS}
       </Typography>
       <ul className="details-list">
-        {Object.entries(data).map(
-          (entry) =>
-            !excludedData.includes(entry[0]) &&
-            entry[1] !== null && (
-              <Typography variant="subtitle1" component="li" py={1}>
-                <strong>{formatDetailsKey(entry[0])}:</strong>{' '}
-                {Array.isArray(entry[1]) ? entry[1].join(', ') : entry[1]}
-              </Typography>
-            ),
-        )}
+        {dataToDisplay.map(([dataKey, dataValue]) => (
+          <Typography variant="subtitle1" component="li" py={1} key={dataKey}>
+            <strong>{formatDetailsKey(dataKey)}:</strong>{' '}
+            {Array.isArray(dataValue) ? dataValue.join(', ') : parse((dataValue).toString())}
+          </Typography>
+        ))}
       </ul>
     </Grid>
   );
