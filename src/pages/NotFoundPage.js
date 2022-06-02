@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { variables } from '../assets/variables';
 
-import '../Components/NotFound/_notFound.scss';
+import '../Components/_shared.scss';
 
-export const NotFound = () => {
+export const NotFoundPage = () => {
   const { redColor, redColorHovered } = variables;
 
   return (

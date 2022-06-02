@@ -1,6 +1,8 @@
 @import '../../assets/variables';
 
 .criminal-photo {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  max-height: 50rem;
 }

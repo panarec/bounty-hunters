@@ -3,7 +3,8 @@ import { CircularProgress, Grid, Pagination } from '@mui/material';
 import { useQuery } from 'react-query';
 
 import { CriminalCard } from './CriminalCard';
-import { FetchCriminals } from './Fetch';
+import { fetchCriminals } from './Fetch';
+import { Loading } from './Loading';
 
 export const CardList = ({ spacing }) => {
   const [page, setPage] = useState(1);
@@ -12,7 +13,9 @@ export const CardList = ({ spacing }) => {
     isLoading,
     isError,
     data: { total, items } = {},
-  } = useQuery([page], () => FetchCriminals('list', `page=${page}`));
+  } = useQuery([page, 'wanted/v1/list', `page=${page}`], () =>
+    fetchCriminals('wanted/v1/list', `page=${page}`),
+  );
 
   const pages = Math.ceil(total / 20);
 
@@ -37,17 +40,7 @@ export const CardList = ({ spacing }) => {
           criminalDetails={criminal}
         />
       ))}
-      {isLoading && (
-        <Grid
-          item
-          container
-          xl={12}
-          justifyContent="center"
-          alignItems="center"
-        >
-          <CircularProgress size={250} sx={{ margin: '0 auto' }} />
-        </Grid>
-      )}
+      {isLoading && <Loading />}
       {isError && (
         <Grid
           item
