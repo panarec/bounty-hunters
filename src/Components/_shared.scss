@@ -5,3 +5,11 @@
   color: $white-color;
   width: 100%;
 }
+button[name='search-button'] {
+  color: $white-color;
+  border: 2px solid $white-color;
+  &:hover {
+    color: $white-color;
+    border: 2px solid $bg-color;
+  }
+}

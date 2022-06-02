@@ -4,6 +4,8 @@ import { FilterContext } from '../FilterContext';
 
 import { variables } from './../assets/variables';
 
+import "./_shared.scss"
+
 const { Grid, Typography, Button } = require('@mui/material');
 
 export const FiltersForm = ({ heading, children }) => {
@@ -43,8 +45,13 @@ export const FiltersForm = ({ heading, children }) => {
       >
         {children}
         <Grid item container sm={12} justifyContent="center">
-          <Button type="submit" variant="outlined">
-            Submit
+          <Button
+            name="search-button"
+            type="submit"
+            variant="outlined"
+            size="large"
+          >
+            Search
           </Button>
         </Grid>
       </Grid>
