@@ -1,8 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { FiltersForm } from './Components/FiltersForm';
-
 export const FilterContext = createContext();
 
 export const FilterContextProvider = ({ children }) => {
