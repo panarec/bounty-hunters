@@ -1,4 +1,5 @@
 import { Grid, Typography } from '@mui/material';
+import parse from 'html-react-parser';
 
 import { variables } from '../../assets/variables';
 import { formatDetailsKey } from '../../utils/helpers';
@@ -55,7 +56,7 @@ export const Description = ({ data }) => {
             {DESCRIPTION}
           </Typography>
           <Typography variant="subtitle1" component="div">
-            {caution}
+            {parse(caution)}
           </Typography>
         </>
       )}
@@ -70,7 +71,7 @@ export const Description = ({ data }) => {
         {dataToDisplay.map(([dataKey, dataValue]) => (
           <Typography variant="subtitle1" component="li" py={1}>
             <strong>{formatDetailsKey(dataKey)}:</strong>{' '}
-            {Array.isArray(dataValue) ? dataValue.join(', ') : dataValue}
+            {Array.isArray(dataValue) ? dataValue.join(', ') : parse((dataValue).toString())}
           </Typography>
         ))}
       </ul>
