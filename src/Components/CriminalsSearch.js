@@ -35,7 +35,7 @@ export const CriminalsSearch = () => {
       <Filter>
         <TextFieldFilter
           label="Title"
-          value={context.searchParams.get('title')}
+          value={title}
           onChange={(e) => context.onTextfieldChange('title', e.target.value)}
         />
       </Filter>
@@ -43,7 +43,7 @@ export const CriminalsSearch = () => {
         <TextFieldFilter
           label="Weight"
           type="number"
-          value={context.searchParams.get('weight')}
+          value={weight}
           onChange={(e) => context.onTextfieldChange('weight', e.target.value)}
         ></TextFieldFilter>
       </Filter>
@@ -51,7 +51,7 @@ export const CriminalsSearch = () => {
         <TextFieldFilter
           label="Nationality"
           select
-          value={context.searchParams.get('nationality')}
+          value={nationality}
           onChange={(e) =>
             context.onTextfieldChange('nationality', e.target.value)
           }
@@ -62,7 +62,7 @@ export const CriminalsSearch = () => {
         <TextFieldFilter
           label="Eyes"
           select
-          value={context.searchParams.get('eyes')}
+          value={eyes}
           onChange={(e) => context.onTextfieldChange('eyes', e.target.value)}
           options={eyesOptions}
         />
@@ -90,7 +90,7 @@ export const CriminalsSearch = () => {
         <TextFieldFilter
           label="Race"
           select
-          value={context.searchParams.get('race')}
+          value={race}
           onChange={(e) => context.onTextfieldChange('race', e.target.value)}
           options={raceOptions}
         />
