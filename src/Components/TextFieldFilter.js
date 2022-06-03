@@ -1,15 +1,15 @@
-import { TextField } from '@mui/material';
+import { MenuItem, TextField } from '@mui/material';
 
-import {WhiteTextField} from "./CustomMUI"
+import { WhiteTextField } from './CustomMUI';
 
-export const TextFieldFilter = ({ ...rest }) => {
-
+export const TextFieldFilter = ({ options, ...rest }) => {
   return (
-    <TextField
-      {...rest}
-      fullWidth
-      variant="outlined"
-      sx={WhiteTextField}
-    />
+    <TextField {...rest} fullWidth variant="outlined" sx={WhiteTextField}>
+      {options?.map((option) => (
+        <MenuItem key={option} value={option}>
+          {option}
+        </MenuItem>
+      ))}
+    </TextField>
   );
 };

@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 
 import { bgImage, placeHolder } from '../assets/images/';
 import { variables } from '../assets/variables';
+import { getMoneyStringfromString } from '../utils/helpers';
 
 import { Stars } from './Stars';
 
@@ -27,7 +28,7 @@ export const CriminalCard = ({ criminalDetails, grid_columns }) => {
   const { redColor, redColorHovered, greenColor } = variables;
   const { title, images, description, reward_text, uid } = criminalDetails;
 
-  const rewardAmount = reward_text?.match(/\$(\d,*)*/g);
+  const rewardAmount = getMoneyStringfromString(reward_text);
 
   return (
     <Grid item container justifyContent="center" {...grid_columns}>
@@ -35,6 +36,7 @@ export const CriminalCard = ({ criminalDetails, grid_columns }) => {
         sx={{
           margin: '0 auto',
           maxWidth: '17rem',
+          width: '100%',
           textAlign: 'center',
           backgroundImage: `url(${bgImage})`,
           display: 'flex',

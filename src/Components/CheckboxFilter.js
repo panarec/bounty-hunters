@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import {
   Checkbox,
   FormControl,
@@ -7,10 +8,18 @@ import {
 } from '@mui/material';
 
 import { variables } from '../assets/variables';
+import { FilterContext } from '../FilterContext';
 
-export const CheckboxFilter = ({ label }) => {
-  const hairs = ['Dark', 'Brown', 'Blond'];
+export const CheckboxFilter = ({ label, options, onChange }) => {
   const { whiteColor, bgColor } = variables;
+  const context = useContext(FilterContext);
+
+  const isChecked = (option) => {
+    const propertyKey = context.filters[label.toLowerCase()] || '';
+    const values = propertyKey.toString().split(',');
+    const checked = values.some((value) => value === option.toLowerCase());
+    return checked;
+  };
 
   return (
     <FormControl
@@ -29,17 +38,19 @@ export const CheckboxFilter = ({ label }) => {
         {label}
       </FormLabel>
       <FormGroup row>
-        {hairs.map((hair) => {
+        {options?.map((option) => {
           return (
             <FormControlLabel
+              key={option}
               control={
                 <Checkbox
-                  onChange={null}
+                  onChange={onChange}
                   sx={{ color: whiteColor }}
-                  name={hair.toLowerCase()}
+                  name={option.toLowerCase()}
+                  checked={isChecked(option)}
                 />
               }
-              label={hair}
+              label={option}
               sx={{
                 color: whiteColor,
                 '& .MuiCheckbox-root.Mui-checked': {

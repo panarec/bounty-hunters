@@ -71,7 +71,9 @@ export const Description = ({ data }) => {
         {dataToDisplay.map(([dataKey, dataValue]) => (
           <Typography variant="subtitle1" component="li" py={1} key={dataKey}>
             <strong>{formatDetailsKey(dataKey)}:</strong>{' '}
-            {Array.isArray(dataValue) ? dataValue.join(', ') : parse((dataValue).toString())}
+            {Array.isArray(dataValue)
+              ? dataValue.join(', ')
+              : parse(dataValue.toString())}
           </Typography>
         ))}
       </ul>

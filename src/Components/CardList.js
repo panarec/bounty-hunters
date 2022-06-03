@@ -1,10 +1,20 @@
 import { useState } from 'react';
-import { CircularProgress, Grid, Pagination } from '@mui/material';
+import { Grid, Pagination } from '@mui/material';
 import { useQuery } from 'react-query';
+
+import { getMoneyNumberfromString } from '../utils/helpers';
+import { useFilterContext } from '../utils/useFilterContext';
 
 import { CriminalCard } from './CriminalCard';
 import { fetchCriminals } from './Fetch';
 import { Loading } from './Loading';
+
+const gridColumns = {
+  xl: 3,
+  lg: 4,
+  md: 6,
+  sm: 12,
+};
 
 export const CardList = ({ spacing }) => {
   const [page, setPage] = useState(1);
@@ -13,18 +23,64 @@ export const CardList = ({ spacing }) => {
     isLoading,
     isError,
     data: { total, items } = {},
-  } = useQuery([page, 'wanted/v1/list', `page=${page}`], () =>
-    fetchCriminals('wanted/v1/list', `page=${page}`),
+  } = useQuery([page, '@wanted', `page=${page}&pageSize=50`], () =>
+    fetchCriminals('@wanted', `page=${page}&pageSize=50`),
   );
 
-  const pages = Math.ceil(total / 20);
+  const pages = Math.ceil(total / 50);
 
-  const grid_columns = {
-    xl: 3,
-    lg: 4,
-    md: 6,
-    sm: 12,
+  const context = useFilterContext();
+
+  const filtersEntries = [...context.searchParams];
+
+  const getValidFilters = () => {
+    return filtersEntries.filter(
+      ([filtersKey, filtersValue]) =>
+        (filtersValue !== 'All' &&
+          filtersValue !== null &&
+          filtersValue.length > 0) ||
+        filtersValue > 0,
+    );
   };
+
+  const getCriminalReward = (criminal) => {
+    let reward =
+      criminal?.reward_text !== null
+        ? getMoneyNumberfromString(criminal?.reward_text)
+        : 0;
+    reward = Array.isArray(reward) ? reward.join('') : 0;
+    return parseInt(reward);
+  };
+
+  const getFilteredData = () => {
+    return items?.filter((criminal) =>
+      getValidFilters().every(([filterKey, filterValue]) => {
+        if (filterKey === 'hair' || filterKey === 'sex') {
+          const valueItems = filterValue.split(',');
+          return valueItems.some(
+            (item) => item.toLowerCase() === criminal[filterKey]?.toLowerCase(),
+          );
+        }
+        if (filterKey === 'weight') {
+          return (
+            criminal.weight_max >= parseInt(filterValue) &&
+            parseInt(filterValue) >= criminal.weight_min
+          );
+        }
+        if (filterKey === 'min_reward') {
+          return getCriminalReward(criminal) >= filterValue;
+        }
+        if (filterKey === 'max_reward') {
+          return getCriminalReward(criminal) <= filterValue;
+        }
+        return criminal[filterKey]
+          ?.toLowerCase()
+          .includes(filterValue?.toLowerCase());
+      }),
+    );
+  };
+
+  const filteredData = getFilteredData();
 
   return (
     <Grid
@@ -33,10 +89,10 @@ export const CardList = ({ spacing }) => {
       spacing={spacing}
       sx={{ paddingBlock: '3rem' }}
     >
-      {items?.map((criminal) => (
+      {filteredData?.map((criminal) => (
         <CriminalCard
           key={criminal.uid}
-          grid_columns={grid_columns}
+          grid_columns={gridColumns}
           criminalDetails={criminal}
         />
       ))}
@@ -49,7 +105,7 @@ export const CardList = ({ spacing }) => {
           justifyContent="center"
           alignItems="center"
         >
-          Not found component
+          "Not found" component
         </Grid>
       )}
       <Grid item container xl={12} justifyContent="center" alignItems="center">

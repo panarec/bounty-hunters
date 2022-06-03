@@ -1,0 +1,1025 @@
+[33mcommit 89507d34e1688ff7a41ad5fd39bebf22e4c993db[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/filters[m[33m, [m[1;31morigin/feature/filters[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 31 13:36:09 2022 +0200
+
+    Added filters to URL
+
+[33mcommit c69a717a9a1f053b41fd7840f7e52f22ce05ee9c[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 31 10:22:38 2022 +0200
+
+    Helpers functions added
+
+[33mcommit 85e43ba5700b1f55e7c4032d154ed2ee20d56849[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 31 09:47:41 2022 +0200
+
+    Context functions refactored
+
+[33mcommit 2298c0d57caaecde06a8ff76c61c52e347e7084b[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 31 08:51:21 2022 +0200
+
+    Bugs fixed
+
+[33mcommit c47577fd94cb9c88fe442039a2bf94627992af27[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 30 16:03:49 2022 +0200
+
+    Dynamic filters
+
+[33mcommit 134d527341e43704188f57671b3a27bc06a8ec03[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 30 13:09:12 2022 +0200
+
+    Not found added
+
+[33mcommit 9c34bdc9e7ef381c9d4c1e31c4366e5535eebcef[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 30 13:01:21 2022 +0200
+
+    static filters completed
+
+[33mcommit 953ae5334a18b56ac038c030c3ae28682bef7844[m[33m ([m[1;31morigin/feature/DetailPage[m[33m, [m[1;32mfeature/DetailPage[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 26 14:24:12 2022 +0200
+
+    Not found page added
+
+[33mcommit 919b9c8500fc2f6ba8e43fdec4fea4a4b28ebfc5[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 26 14:01:54 2022 +0200
+
+    Details data fixed
+
+[33mcommit 23441e2dfc262bc38caa46ea82dbcdd110bd8f99[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 26 13:19:42 2022 +0200
+
+    Photo max size changed
+
+[33mcommit 0a89613631ee1c4c1871446b46ac9e78171511da[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 26 13:15:06 2022 +0200
+
+    Formater helper edited
+
+[33mcommit 986bf8bdb3ae55fe03c0e3d9f3230e38aee16e0f[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 26 13:07:55 2022 +0200
+
+    Details displayed
+
+[33mcommit 0a87a74a68cfd7c7bfb138dae24a47d683d4f5c0[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 26 08:23:24 2022 +0200
+
+    Loading component created
+
+[33mcommit 555e57828c6282cd63e2f54c8e795867d3888522[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 25 16:40:37 2022 +0200
+
+    criminal info added
+
+[33mcommit ebe07a6e5b3f43632417c2bebbff577966f76cc2[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 25 15:07:53 2022 +0200
+
+    Fetching detail data
+
+[33mcommit 5c39f971c4241b7f22721e407099b56b46981fe6[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 25 14:05:32 2022 +0200
+
+    useQuery fixed
+
+[33mcommit 346177983f92442c648988b246c5dcbfffb39bd3[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 25 12:59:39 2022 +0200
+
+    Detail page refactored
+
+[33mcommit ff1e34b08eb48bd2ba1e31cfda82ebb3e21e5613[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 25 11:04:39 2022 +0200
+
+    Link button working
+
+[33mcommit a860faea819ebf6756c484a0893085fef1a7e799[m
+Merge: d892183 b880086
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 25 10:45:01 2022 +0200
+
+    Merge branch 'main' into feature/detailPage
+
+[33mcommit b88008684a2cef22005b5b25e98ae12e111f77bd[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Merge: c4a3d74 cfbb546
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Wed May 25 10:42:36 2022 +0200
+
+    Merge pull request #15 from panarec/feature/cardsListData
+    
+    Feature/cards list data
+
+[33mcommit cfbb54657b4ef1ee6e50da0dca43a513a6efdc1a[m
+Merge: ff10c1d c4a3d74
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Wed May 25 10:42:26 2022 +0200
+
+    Merge branch 'main' into feature/cardsListData
+
+[33mcommit ff10c1df7819ddb389467daf60da098eb622257c[m[33m ([m[1;31morigin/feature/cardsListData[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 25 10:38:57 2022 +0200
+
+    Fetch function separated
+
+[33mcommit c4a3d74594efa2c5fe010e469e856b3df980a0d2[m
+Merge: 05eb211 ac2e986
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Wed May 25 09:03:49 2022 +0200
+
+    Merge pull request #17 from panarec/bugfix/filtersRedesign
+    
+    Bugfix/filters redesign
+
+[33mcommit ac2e986aee8f8df98239f41a5662b9cad7dbd1f0[m[33m ([m[1;31morigin/bugfix/filtersRedesign[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 25 09:03:11 2022 +0200
+
+    Custom MUI created
+
+[33mcommit 05eb2114b1342c1ab98c3854db36920dc7c2fac6[m
+Merge: 7a7c13d 993de2a
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Wed May 25 08:57:16 2022 +0200
+
+    Merge pull request #13 from panarec/feature/detailPage
+    
+    Feature/detail page
+
+[33mcommit d892183118931b116ea747428a7d20a42975be94[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 25 08:56:34 2022 +0200
+
+    Button for booking done
+
+[33mcommit 411c72f6a04e48586f42723183e76dd38dd0155c[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 24 16:04:15 2022 +0200
+
+    Link scroll
+
+[33mcommit 993de2a4bd101a2adb1f2fdfc86872e6d0457ab6[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 24 15:49:58 2022 +0200
+
+    Bugs fixed based on CR
+
+[33mcommit f2fdd926daa8a451a4d6de0b07674ce5353c50d6[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 24 14:22:55 2022 +0200
+
+    bug fixed
+
+[33mcommit e464b9221b830306048310aea00376646769f929[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 24 14:21:40 2022 +0200
+
+    Pages added to query keys
+
+[33mcommit bc4d93576061b873031f123c7af797f32ec61c96[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 24 12:49:53 2022 +0200
+
+    React query used
+
+[33mcommit bd4b8a18e459d92f90ef136b0ffd2beca963de62[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 24 10:56:19 2022 +0200
+
+    useQuery used
+
+[33mcommit 6dc24452ef4942af79664234b6ebd8df4f36e255[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 24 09:15:18 2022 +0200
+
+    react query added
+
+[33mcommit d2031a66c0882379e634463d6df7cd35c2781c6d[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 23 16:45:11 2022 +0200
+
+    Regex applied
+
+[33mcommit 4bb70e419feaf2a88f5f6b232b56af1547138436[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 23 15:10:57 2022 +0200
+
+    Stars color fixed
+
+[33mcommit 1a5a13839d87fff9a9f1686289dd0b53f540cc68[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 23 14:57:44 2022 +0200
+
+    Added text constant
+
+[33mcommit 7a7c13df8fc20cb25389f12b2a37b10e7fccf07a[m
+Merge: aaf2dac 7f83ff2
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Mon May 23 14:25:07 2022 +0200
+
+    Merge pull request #16 from panarec/feature/context
+    
+    context created
+
+[33mcommit 7f83ff214d200c979e63e3bbcf281b769f17b924[m[33m ([m[1;31morigin/feature/context[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 23 14:24:53 2022 +0200
+
+    Contect renamed
+
+[33mcommit b5885d1c648ebc17656e2fd6ac5b41052bc95ad2[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 23 14:21:29 2022 +0200
+
+    bugs fixed
+
+[33mcommit aaf2dac47a261ca29b79c253e744fa6decf1e106[m
+Merge: 4dc9f8b fa88291
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Mon May 23 14:20:19 2022 +0200
+
+    Merge pull request #14 from panarec/feature/404
+    
+    Not found page completed
+
+[33mcommit fa88291fed270f0e0a3472a90f8e2adb27fbc6f5[m[33m ([m[1;31morigin/feature/404[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 23 12:59:51 2022 +0200
+
+    bugs fixed
+
+[33mcommit 042c565bc30a87e23a2cba7d585cf0055118ab84[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 23 12:53:38 2022 +0200
+
+    console log deleted
+
+[33mcommit 2543c25f3ddc5ba45ac27e7fe9e0888b44dddfbe[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 23 12:48:47 2022 +0200
+
+    Bugs fixed
+
+[33mcommit ba921fb223498a02ac6359a372ba9fbf2dd7489f[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 23 12:33:26 2022 +0200
+
+    unused imports deleted
+
+[33mcommit 3aabc47373adfd2ddfa32ed666cfc48e71fb4416[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 23 11:17:13 2022 +0200
+
+    Filters design changed
+
+[33mcommit b637f9783271cb182fa93d46b0ab88d29bbb0bda[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 20 15:14:43 2022 +0200
+
+    Not found page completed
+
+[33mcommit 88441e44a82d26e86443a9c80a3df5f4deddf190[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 20 13:06:49 2022 +0200
+
+    context created
+
+[33mcommit 29c296e933660e2280b53a687cf73d1c4bc730fc[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 20 12:36:02 2022 +0200
+
+    custom properities added
+
+[33mcommit b52b2303569bc3d91ccfd56625d0a60d845e92e8[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 20 09:43:24 2022 +0200
+
+    Card style fixed
+
+[33mcommit ce6749f8eb3f1132d2c9f155df26615157cd85bf[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 19 15:42:30 2022 +0200
+
+    paggination implemented
+
+[33mcommit c4594271eae3354f14858d4f86b6f431988aba23[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 19 15:19:08 2022 +0200
+
+    Colors variables removed
+
+[33mcommit de75d4f6e69e4cbfaee90dd7057be3ebefcdf25f[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 19 15:11:01 2022 +0200
+
+    Stars component created
+
+[33mcommit eacf05018f86452949dea8e9d49bee86d7f71eae[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 19 14:50:38 2022 +0200
+
+    Basic data display
+
+[33mcommit e0f4b1e97eecc49ab0713da4518fedcf6d5dd779[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 19 11:00:17 2022 +0200
+
+    margin added
+
+[33mcommit 3012840f9e8de93beb1abffaa21496e59f661d73[m
+Merge: 7258226 4dc9f8b
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 19 10:58:16 2022 +0200
+
+    Resolved conflicts
+
+[33mcommit 4dc9f8bbb1da1c66777084ec01bbfd56fa677490[m
+Merge: 2366bce 80155be
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Thu May 19 10:49:38 2022 +0200
+
+    Merge pull request #12 from panarec/bugfix/cardsList
+    
+    Card list layout fixed
+
+[33mcommit 80155be13482cac283179b6edc15d59b64bc45bb[m[33m ([m[1;31morigin/bugfix/cardsList[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 19 10:45:57 2022 +0200
+
+    Card list layout fixed
+
+[33mcommit 2366bce42410ea0797f6be8459b74477b0a3ec1b[m
+Merge: bfad36b 9019eb2
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Thu May 19 10:34:09 2022 +0200
+
+    Merge pull request #11 from panarec/bugfix/cardsList
+    
+    Added padding to card list
+
+[33mcommit bfad36b380a3a663e7bef961a050eaadb2470806[m
+Merge: dc7bd72 f81577f
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Thu May 19 10:33:50 2022 +0200
+
+    Merge pull request #8 from panarec/feature/filters
+    
+    Feature/filters
+
+[33mcommit f81577f9d34c4e41a30a1c5961d8de2dbe5f9374[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 19 10:32:58 2022 +0200
+
+    variables added
+
+[33mcommit 7258226a30484a9c3b0455b6eab73de0dcbff669[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 19 09:49:16 2022 +0200
+
+    Detail components finished
+
+[33mcommit 95d37f6dbe28e12b0af7153f4b263021649c83b1[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 13:53:42 2022 +0200
+
+    Bugs fixed based on CR
+
+[33mcommit c06558723a7707227494eea3e1e4aff6ed6ab58d[m
+Merge: 7ff70ef dc7bd72
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 13:45:45 2022 +0200
+
+    Conflicts solved
+
+[33mcommit 7ff70ef4ecd44d18d0f70b38c5e95151dc82bee8[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 13:44:10 2022 +0200
+
+    variables added
+
+[33mcommit dc7bd7241d09ab4fe80b322b75b633ec117df56f[m
+Merge: 724f271 3e13e1d
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Wed May 18 13:35:35 2022 +0200
+
+    Merge pull request #10 from panarec/feature/headerImage
+    
+    Feature/header image
+
+[33mcommit 3e13e1d35a787d59fcc8ea282f577b749d04a3f5[m[33m ([m[1;31morigin/feature/headerImage[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 13:35:16 2022 +0200
+
+    Bugs fixed based on CR
+
+[33mcommit 9019eb2bae7dc0cb542b6fc9a3e70f9deefce9d4[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 13:32:37 2022 +0200
+
+    Added padding to card list
+
+[33mcommit d96d154ba41cff4bbca19b0f9d8cf33c90f85035[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 12:45:30 2022 +0200
+
+    PageTitle moved to Homepage
+
+[33mcommit 4312e21b09e35008a6912328bd21f2630dd904cb[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 10:50:42 2022 +0200
+
+    Added to Homepage
+
+[33mcommit a1982ac1dc4f140bdc772708c3ecf883386a8f88[m
+Merge: 2d958cf 724f271
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 10:44:46 2022 +0200
+
+    Conflicts solved
+
+[33mcommit b5fa5753d68ac1d54039fddd5ffd0a7d9999ad78[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 10:42:42 2022 +0200
+
+    Description component added
+
+[33mcommit b3938678e5406a832ffafbaad512fd3728d5efb8[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 10:18:33 2022 +0200
+
+    Detail photo with short description added
+
+[33mcommit 0ca54c893c718d599e449170b64b94e8ed8bcc01[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 08:58:32 2022 +0200
+
+    Header shadow added
+
+[33mcommit f21b6f1b2f7f72407ce7c5cb41ba84b4f66f75d5[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 18 08:41:29 2022 +0200
+
+    Header image finished
+
+[33mcommit badb035d1e6a93d7800782521f0e2782acea43b9[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 16:31:03 2022 +0200
+
+    Heading added to header image
+
+[33mcommit 43bc6a79eab3367273126794fd8b0f791e03559d[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 16:10:20 2022 +0200
+
+    Header image added
+
+[33mcommit 97c79bcaa60b3315aad2a055725a389f2bf989ba[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 15:55:23 2022 +0200
+
+    folder structure changed
+
+[33mcommit 724f27147a21dbfc592d7db12de227bd40d44b51[m
+Merge: afe4da1 77214e0
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 15:30:17 2022 +0200
+
+    Merge branch 'feature/header'
+
+[33mcommit 77214e0d74a14dde69030aeb7594369f79fe9557[m
+Merge: 7c5fa4c afe4da1
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 15:19:51 2022 +0200
+
+    Conflicts solved
+
+[33mcommit 7c5fa4c5b2244f497e1a5f1401506ca827714017[m[33m ([m[1;31morigin/feature/header[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 15:15:20 2022 +0200
+
+    Menu button onClick fixed
+
+[33mcommit c4a8956352fd7d51b630823ac1220fd20339e85a[m
+Merge: 82bc34d 1232919
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 14:53:47 2022 +0200
+
+    Merge branch 'feature/header' of https://github.com/panarec/bounty-hunters into feature/header
+
+[33mcommit 82bc34db73f3f0e9febe3937b7b04d0cf3ef6b85[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 14:53:23 2022 +0200
+
+    Bugs fixed based on CR
+
+[33mcommit afe4da192b295842a645b23622fc9f8324b9c779[m
+Merge: cf00b21 d3dd105
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Tue May 17 14:38:38 2022 +0200
+
+    Merge pull request #9 from panarec/feature/cardsList
+    
+    Feature/cards list
+
+[33mcommit d3dd105444763f30f017f7e1a4756f07bb5ac724[m
+Merge: e5b3804 cf00b21
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Tue May 17 14:38:13 2022 +0200
+
+    Merge branch 'main' into feature/cardsList
+
+[33mcommit e5b3804474e8bb0038e4fee0feaea8d1e7ede009[m[33m ([m[1;31morigin/feature/cardsList[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 14:33:24 2022 +0200
+
+    Bugs fixed base on CR
+
+[33mcommit 2d958cfd690fdc8faebbfd6a3a81272335d5629a[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 14:20:44 2022 +0200
+
+    Filters layout finished
+
+[33mcommit 73eddcdd91a5e85393421a49603223e519a27c35[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 14:18:14 2022 +0200
+
+    Layout edited
+
+[33mcommit 83722f209c994a1f075a72299f12877a3f001a1c[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 13:56:09 2022 +0200
+
+    Basic filter layout
+
+[33mcommit a5ff3d64098511af0ef660535572a2f58f53625c[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 10:57:11 2022 +0200
+
+    SliderFilter created
+
+[33mcommit 84b80e88724a32e2a702360b2e579d903277c3f1[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 10:51:16 2022 +0200
+
+    folder structure changed
+
+[33mcommit 123291919b6222c1fade286ff712b4b9cac90002[m
+Merge: f13264c cf00b21
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Tue May 17 10:25:08 2022 +0200
+
+    Merge branch 'main' into feature/header
+
+[33mcommit f94e26930eea70496aa7ecba3721c902a8e7cf20[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 10:08:56 2022 +0200
+
+    Fixed all bugs based on CR
+
+[33mcommit cf497e006ca6bfcf3e2a3cf9a241986002ee861d[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 09:44:56 2022 +0200
+
+    Variables created and applied
+
+[33mcommit eb8b554e18afe3cce72f1f7a6127415e34a2b8bc[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 09:06:58 2022 +0200
+
+    CardList logic added
+
+[33mcommit f13264c847b08a12aafd67159ec4d4cecdd42d87[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 08:46:35 2022 +0200
+
+    Bugs fixed based on CR
+
+[33mcommit 0e6943ca75b2aeda83d90016e0956958ccbccd40[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 17 08:06:28 2022 +0200
+
+    new SCSS folders structure
+
+[33mcommit c2aa1e281626b36feb944fff43cb6d52644694ab[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 16:30:41 2022 +0200
+
+    Dynamic links
+
+[33mcommit f49d9856c722dac4ebc6bfbb931ad143e47b1c96[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 16:18:14 2022 +0200
+
+    ESlint applied
+
+[33mcommit e18a17a71b6f4e4cfdb040ce4ed835f460376400[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 16:08:13 2022 +0200
+
+    ESlint applied
+
+[33mcommit 621065c71a8be81364bde68b2d67b02cb5b3cd5c[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 16:03:55 2022 +0200
+
+    Filters added
+
+[33mcommit 9225a796b765384e7aaf9fd106a744623226f72a[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 14:43:06 2022 +0200
+
+    TextFieldFilter created
+
+[33mcommit 86b9425edf884cd36210a6fcc5448f56e355bd45[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 14:27:35 2022 +0200
+
+    Layout container updated
+
+[33mcommit 8fbca27cb0ecdc87ba844d327dcaab0b64a96793[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 14:04:35 2022 +0200
+
+    FiltersForm.js created
+
+[33mcommit 8f63e9216222e3a2b86135cfdbe688995fb891b9[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 13:47:42 2022 +0200
+
+    FiltersForm.js created
+
+[33mcommit cf00b2159cbdd7bd175b643b335789c4ff085e18[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 13:38:32 2022 +0200
+
+    eslint confing changed
+
+[33mcommit f3e507c3b2747d87c4b68682ced553381c78a6a6[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 13:17:15 2022 +0200
+
+    Reward amount component fixed
+
+[33mcommit 3436a211dc2297e872da575f31290ef1ec66f33a[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 12:50:20 2022 +0200
+
+    Card layout finished
+
+[33mcommit baa318a22994a09e42d376979a1f1aeed912faf7[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 10:35:07 2022 +0200
+
+    Card layout finished
+
+[33mcommit 142c16089045f71044e0cd83f029323fe176f0f7[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 10:24:58 2022 +0200
+
+    Card background added
+
+[33mcommit 3a8347d854426800326659b5aa5c83c105decb91[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 09:51:15 2022 +0200
+
+    Finally ESlint fixed
+
+[33mcommit d69043f3e9ee57723fa59caea5e6197efd466fb2[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 09:50:37 2022 +0200
+
+    Finally ESlint fixed
+
+[33mcommit bcdbbad127ed47b43b2f212e5f1392c310088ff5[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 08:39:30 2022 +0200
+
+    eslint config updated
+
+[33mcommit 0ab0e114642f2eb82703a30663db1511e3f326b1[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Mon May 16 08:26:06 2022 +0200
+
+    Card layout created
+
+[33mcommit fd50b167db8799d4c275089f88d3f3e055a8bb33[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 15:06:03 2022 +0200
+
+    CriminalCard created
+
+[33mcommit 16890e95ba990331b39f2d324ba47d00a797b1b1[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 15:04:53 2022 +0200
+
+    Images folder added
+
+[33mcommit 76825351f4a3d0ab0a30f0d03ea7d69578c5e95a[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 14:58:19 2022 +0200
+
+    New fonts added to index
+
+[33mcommit 0e758c0bcd21f5e7e939d7a44e95a1260b7d1cde[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 14:44:44 2022 +0200
+
+    Card, CardList created
+
+[33mcommit 0969ac4dbf1385a46cdacf912fed100d6773e656[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 11:54:45 2022 +0200
+
+    Header responsivity finished
+
+[33mcommit 798765997f860433307890b5bf9f6c6edb2e939a[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 11:06:48 2022 +0200
+
+    Menu button styling finished
+
+[33mcommit 1b752e2fbb9aa579efae2af32eb1474c7669497c[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 10:51:52 2022 +0200
+
+    Additional styling to menu btn
+
+[33mcommit 9c09327f6198d1ebf06ca3c5da0483971b9d56fe[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 10:41:35 2022 +0200
+
+    Menu button added to Header
+
+[33mcommit 460243837b2a02f0458fef186c93d6392cac168c[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 10:25:28 2022 +0200
+
+    Menu button created
+
+[33mcommit 10d91471c77e91fb2f045d475071c86945ec1204[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 10:00:44 2022 +0200
+
+    Breakpoint for navbar created
+
+[33mcommit d6c8c1c948995b2168c441247370fd79c26ae598[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Fri May 13 09:49:01 2022 +0200
+
+    Created list in navbar
+
+[33mcommit ad9a7628c0ebfe0008f577b95b69a9e407c22c7e[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 16:41:53 2022 +0200
+
+    Header styling finished
+
+[33mcommit d05d7dab6d8cd0a185b9d56c86fa4eba16588810[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 16:03:52 2022 +0200
+
+    Font links addet to index
+
+[33mcommit 012f676ee134e318233189b723e60d518c0390e0[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 15:33:15 2022 +0200
+
+    Import fixed
+
+[33mcommit e22e8a865b96d54d62f967a9d2275167c709ef1f[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 15:28:37 2022 +0200
+
+    Navbar included to Header
+
+[33mcommit c4018520ffb219f32c1e2037b03244f1ae3631eb[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 15:28:02 2022 +0200
+
+    Navbar component created
+
+[33mcommit c28b85012b7d43182840c7e64256dd34ca8fe7cc[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 15:13:49 2022 +0200
+
+    custom.scss created and included in App
+
+[33mcommit 7035ec28fe5c1c26a98f4d7f3ced6bf14bd4c7ab[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 14:46:56 2022 +0200
+
+    minor bug fixed
+
+[33mcommit e8c39c3f78d6bf5497382c4e87575e00970a2908[m
+Merge: ff5b9ea fa94405
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Thu May 12 14:36:29 2022 +0200
+
+    Merge pull request #2 from panarec/feature/router
+    
+    Feature/router
+
+[33mcommit fa944050afcdb8ac5fdf329412e162a422a89971[m
+Merge: 421d9e0 ff5b9ea
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Thu May 12 14:36:21 2022 +0200
+
+    Merge branch 'main' into feature/router
+
+[33mcommit ff5b9ea47f4269922ac078d15858eefc32b0703d[m
+Merge: 9e30482 ac78a88
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Thu May 12 14:30:18 2022 +0200
+
+    Merge pull request #3 from panarec/feature/layout
+    
+    Feature/layout
+
+[33mcommit 421d9e08febf2108f20f1bbc418c9b917b50b406[m[33m ([m[1;31morigin/feature/router[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 14:26:54 2022 +0200
+
+    Fixed bugs based on CR
+
+[33mcommit ac78a88dd17bef04f5c48782b5207864a128daf8[m[33m ([m[1;31morigin/feature/layout[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 14:22:44 2022 +0200
+
+    Repaired
+
+[33mcommit 5cab0776cab9c67019902991f60f71ca728980d7[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 13:50:38 2022 +0200
+
+    Criminal detail page included in Routes
+
+[33mcommit 45f384a470e66966b631b480f073b13c1372706f[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 13:47:57 2022 +0200
+
+    CriminatDetailPage.js created
+
+[33mcommit a67c9375df1d339058d0552fdf83812262b5770d[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 10:17:16 2022 +0200
+
+    Created Homepage.js and added to Routes as index
+
+[33mcommit b2880b551632e945bfcfe90c7802424509aacf8f[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 10:11:49 2022 +0200
+
+    Imported and used components from RRD
+
+[33mcommit 7d839821c0409dc929de70920463a6e798bd9db5[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 09:53:50 2022 +0200
+
+    Routes.js file added
+
+[33mcommit 4bf09a195afaad010846c7ce5a775a363be6977d[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 13:44:37 2022 +0200
+
+    Header and Footer added to Layout
+
+[33mcommit ed3386e2d30e170a971eaa5e1f6a0dbaf1c6d005[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 13:35:41 2022 +0200
+
+    Header.js Footer.js created and added to Layout
+
+[33mcommit b7bab652c8ae403759579a2aef47d524fa131415[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 13:16:17 2022 +0200
+
+    Layout added to App.js
+
+[33mcommit fd30558cb3a59c89829fe19321f12eb6b148d115[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 13:14:54 2022 +0200
+
+    Container element imported and used
+
+[33mcommit 62085890dabbc7feac2681a4429375d3e9122d3e[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 13:13:28 2022 +0200
+
+    Layout.js created
+
+[33mcommit 55b04184adb25d10b07e12f0545d87e90f26ec22[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 10:17:16 2022 +0200
+
+    Created Homepage.js and added to Routes as index
+
+[33mcommit 8129aec87672d83864a205d4fd61796685a4c09d[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 10:11:49 2022 +0200
+
+    Imported and used components from RRD
+
+[33mcommit 707f4460ce3089222993667cf6f670274cb0347a[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Wed May 11 09:53:50 2022 +0200
+
+    Routes.js file added
+
+[33mcommit 9e30482b8ab231d0e39cc373e7075ba70653145c[m
+Merge: 57ddf18 6c87f7d
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Thu May 12 11:33:26 2022 +0200
+
+    Merge pull request #4 from panarec/feature/packages
+    
+    Feature/packages
+
+[33mcommit 6c87f7d936e0b55db43d850f10f3bf6899f5b120[m[33m ([m[1;31morigin/feature/packages[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 11:31:51 2022 +0200
+
+    prettierrc.yaml .eslintrc.js created
+
+[33mcommit 5241951a2378d40aaa768aee94a47be2395be720[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 11:08:17 2022 +0200
+
+    additional config to ESlint
+
+[33mcommit 7b597171bfbe20301feda2baedacad2de33f01dc[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 10:41:44 2022 +0200
+
+    Prettier installed
+
+[33mcommit d4bb388c4bcca767d786c64483dddb4c433c55c9[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Thu May 12 10:41:02 2022 +0200
+
+    esLint installed
+
+[33mcommit 57ddf185aa2fc26039291cf07ee1109e02d78882[m
+Merge: 21b8764 4f6fa63
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Tue May 10 16:29:46 2022 +0200
+
+    Merge pull request #1 from panarec/feature/MUI_library
+    
+    Added MUI library
+
+[33mcommit 4f6fa63d756204b6f63cf40605941768f2a0dc8a[m[33m ([m[1;31morigin/feature/MUI_library[m[33m)[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 10 16:18:27 2022 +0200
+
+    Added MUI library
+
+[33mcommit 21b876427aed606d5e278e0c7b907da4b4ccaf56[m
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Tue May 10 15:27:46 2022 +0200
+
+    Update README.md
+
+[33mcommit e132db84b7101eb8d01d1a5b64dbf83c346b2a8a[m
+Merge: 841bc81 c381ea9
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 10 13:59:18 2022 +0200
+
+    Merge branch 'main' of https://github.com/panarec/bounty-hunters
+
+[33mcommit c381ea91361e776bbc997e8afb68d698964f0344[m
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Tue May 10 13:54:10 2022 +0200
+
+    Delete LICENSE
+
+[33mcommit 841bc816de7272cf96533fdcbdf8855358fe24c9[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 10 13:41:19 2022 +0200
+
+    Initial commit
+
+[33mcommit 4c2a2e0f911d7562a73316bbe90dca9e145d858f[m
+Author: Vernarec Pavol <vernarec@cngroup.dk>
+Date:   Tue May 10 13:19:34 2022 +0200
+
+    Initialize project using Create React App
+
+[33mcommit 7f9e77c9c8a16622babe75e1b80b62bc3e3e7249[m
+Author: panarec <78908441+panarec@users.noreply.github.com>
+Date:   Tue May 10 11:10:52 2022 +0200
+
+    Initial commit

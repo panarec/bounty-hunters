@@ -22,8 +22,6 @@ export const SliderFilter = ({ min, max, title, ...rest }) => {
           {...rest}
           min={min}
           max={max}
-          value={[0, 100000]}
-          onChange={null}
           sx={{ color: whiteColor }}
         />
         <Typography
