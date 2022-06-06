@@ -7,10 +7,9 @@ import { Button, Grid, Typography } from '@mui/material';
 import { variables } from '../assets/variables';
 import { getMoneyStringfromString } from '../utils/helpers';
 
-
 export const CriminalDetailInfo = ({ data }) => {
   const { smokumFont, ryeFont, greenColor, redColor } = variables;
-  const { description, title, reward_text } = data;
+  const { description, title, reward_text, uid } = data;
 
   return (
     <Grid item md={4}>
@@ -39,7 +38,7 @@ export const CriminalDetailInfo = ({ data }) => {
       >
         {getMoneyStringfromString(reward_text)}
       </Typography>
-      <BookingControls />
+      <BookingControls criminalID={uid} />
       <Button
         variant="text"
         href="#details"

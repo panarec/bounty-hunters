@@ -8,6 +8,8 @@ export const FilterContextProvider = ({ children }) => {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
+  const [eliminatedCriminals, setEliminatedCriminals] = useState([]);
+
   useEffect(() => {
     if (searchParams) {
       setFilters(Object.fromEntries([...searchParams]));
@@ -54,6 +56,13 @@ export const FilterContextProvider = ({ children }) => {
     });
   };
 
+  const getCriminalState = (id) => {
+    const criminalStateObject = eliminatedCriminals.find(
+      (criminal) => criminal.id === id,
+    );
+    return criminalStateObject?.state || 'free';
+  };
+
   const value = {
     filters: filters,
     searchParams: searchParams,
@@ -61,8 +70,12 @@ export const FilterContextProvider = ({ children }) => {
     onCheckboxGroupChange: onCheckboxGroupChange,
     onSubmit: onSubmit,
     onSliderChange: onSliderChange,
+    eliminatedCriminals: eliminatedCriminals,
+    setEliminatedCriminals: setEliminatedCriminals,
+    getCriminalState: getCriminalState,
   };
 
+  console.log(eliminatedCriminals);
   return (
     <FilterContext.Provider value={value}>{children}</FilterContext.Provider>
   );

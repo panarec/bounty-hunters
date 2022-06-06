@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Typography } from '@mui/material';
 
 import { variables } from '../assets/variables';
+import { useFilterContext } from '../utils/useFilterContext';
 
 const STATES = {
   free: 'free',
@@ -9,8 +10,12 @@ const STATES = {
   eliminated: 'eliminated',
 };
 
-export const BookingControls = () => {
-  const [criminalState, setCriminalState] = useState(STATES.free);
+export const BookingControls = ({ criminalID }) => {
+  const context = useFilterContext();
+  console.log(context.getCriminalState(criminalID));
+  const [criminalState, setCriminalState] = useState(
+    context.getCriminalState(criminalID),
+  );
 
   const { redColor, redColorHovered, ryeFont } = variables;
 
@@ -24,6 +29,29 @@ export const BookingControls = () => {
   const handleUnbookClick = (e) => {
     setCriminalState(STATES.free);
   };
+
+  useEffect(() => {
+    if (criminalState === STATES.free) {
+      return context.setEliminatedCriminals(
+        context.eliminatedCriminals.filter(
+          (criminal) => criminal.id !== criminalID,
+        ),
+      );
+    }
+    if (criminalState === STATES.reserved) {
+      return context.setEliminatedCriminals([
+        ...context.eliminatedCriminals,
+        { id: criminalID, state: criminalState },
+      ]);
+    }
+    return context.setEliminatedCriminals(
+      context.eliminatedCriminals.map((criminal) =>
+        criminal.id === criminalID
+          ? { ...criminal, state: criminalState }
+          : criminal,
+      ),
+    );
+  }, [criminalState]);
 
   return (
     <div>
