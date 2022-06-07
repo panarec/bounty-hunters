@@ -12,7 +12,6 @@ const STATES = {
 
 export const BookingControls = ({ criminalID }) => {
   const context = useFilterContext();
-  console.log(context.getCriminalState(criminalID));
   const [criminalState, setCriminalState] = useState(
     context.getCriminalState(criminalID),
   );

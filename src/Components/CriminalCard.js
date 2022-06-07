@@ -26,12 +26,12 @@ const UNKNOWN_NAME = 'UNKNOWN NAME';
 const NO_REWARD = 'NO REWARD';
 
 export const CriminalCard = ({ criminalDetails, grid_columns }) => {
-  const { redColor, redColorHovered, greenColor} = variables;
+  const { redColor, redColorHovered, greenColor } = variables;
   const { title, images, description, reward_text, uid } = criminalDetails;
-  const context = useFilterContext()
+  const context = useFilterContext();
 
   const rewardAmount = getMoneyStringfromString(reward_text);
-  const criminalState = context.getCriminalState(uid)
+  const criminalState = context.getCriminalState(uid);
 
   return (
     <Grid item container justifyContent="center" {...grid_columns}>
@@ -74,14 +74,23 @@ export const CriminalCard = ({ criminalDetails, grid_columns }) => {
             sx={{
               position: 'absolute',
               fontFamily: 'Rye',
-              color: criminalState !== "free" ? redColor : rewardAmount ? greenColor : redColor,
+              color:
+                criminalState !== 'free'
+                  ? redColor
+                  : rewardAmount
+                  ? greenColor
+                  : redColor,
               transform: 'translateX(-50%) rotate(-20deg)',
               left: '50%',
               bottom: '-10px',
               whiteSpace: 'nowrap',
             }}
           >
-            {criminalState !== "free" ? criminalState.toUpperCase() : rewardAmount ? rewardAmount : NO_REWARD}
+            {criminalState !== 'free'
+              ? criminalState.toUpperCase()
+              : rewardAmount
+              ? rewardAmount
+              : NO_REWARD}
           </Typography>
         </CardMedia>
         <CardContent

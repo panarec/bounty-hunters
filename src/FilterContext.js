@@ -75,7 +75,6 @@ export const FilterContextProvider = ({ children }) => {
     getCriminalState: getCriminalState,
   };
 
-  console.log(eliminatedCriminals);
   return (
     <FilterContext.Provider value={value}>{children}</FilterContext.Provider>
   );
